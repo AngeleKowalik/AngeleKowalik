@@ -124,6 +124,7 @@ def get_username_sorted(
 ```python
 
 import requests
+
 base_url = 'https://pokeapi.co/api/v2'
 
 def get_pokemon_info(name):
@@ -143,8 +144,10 @@ while True:
     pokemon_info = get_pokemon_info(pokemon_name)
     if pokemon_info:
         print(f'Name: {pokemon_info['name']}')
-        print(f'Type: {pokemon_info['types'][0]['type']['name']}')
-        print(f'Weight: {pokemon_info['weight']}')
+            for type in range(len(pokemon_info['types'])):
+                print(f'Type: {pokemon_info['types'][type]['type']['name']}')
+            
+            print(f'Weight: {pokemon_info['weight']}')
 ```
 
 ## .md files:
