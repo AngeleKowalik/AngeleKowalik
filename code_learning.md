@@ -1,4 +1,10 @@
 # List of usefull things learnt
+
+## Summary:
+- [Markdown files guide](#md-files-and-how-to-work-with-them)
+- [Virtual environnment](#virtual-environnment)
+- Need to be updated
+
 ## Git:
 ### Setup:
 - Inside root folder powershell terminal : `git init`
@@ -12,18 +18,37 @@ files to be ignored.
 - Go to the control tab in vs code
 - Stage changes (`+` sign) 
 - Apply a name to your changes (message box)
+##### To make name:
+- Follow the rule  (if applied this commit will...)add method to make commit
+- Create a title max 50 characters
+- Leave blanck line
+- use `-` and then write you have done and jump a line, repeat
 - Press commit
+
+##### Example:
+```
+Document BeautifulSoup module usage and refactor the rest of the document:
+
+- Add BeautifulSoup module explanation and example
+- Add a Linux / Mac section yet to be filled
+- Clarify specificities of Windows code in powershell
+- Fix indentation error in code's examples
+- Update FastAPI import errors
+```
 
 ## Virtual environnment:
 ### Creation
+#### Under Windows
 - Open folder project terminal : right click on folder \ Open in Integrated Terminal
-- Creating the VE : py -m venv .venv
+- Creating the virtual environnement : py -m venv .venv
 - Opening / reopening a project : .venv\Scripts\activate
 - Closing a project : deactivate
 
+#### Under Mac / Linux
+
 ### Git and virtual environnement:
 - .venv folder need to be ignored by git
-- Create a requirement.txt file with all the -pip to include in the VE
+- Create a requirement.txt file with all the -pip to include in the virtual environnement
 - To create the list in cmd: pip freeze > requirements.txt 
 - To install from the list in cmd: pip install -r requirements.txt 
 
@@ -46,8 +71,8 @@ The API is the thing in charge of the communication between the backend and the 
 
 
 #### Installation : 
-- In cmd : py -m pip install "fastapi[standard]"
-- In python : from fastapi import FastAPI                                               
+- Under Windows, in powershell : py -m pip install "fastapi[standard]"
+- In python : import fastapi                                               
         
 #### Initialization:
 - Creating an instance of the object FastAPI in python : app = FastAPI() 
@@ -82,7 +107,7 @@ def variable():
 
 ```python
 @app.get('/get-username/{user_name}')
-def get_username(user_name: str = Path(
+def get_username(user_name: str = fastapi.Path(
     description='Enter the city you want to search in the database'
     )):
     return user_name                                                                    
@@ -101,7 +126,7 @@ def get_username(user_name: str = Path(
 ```python
 @app.get('/get-username/')
 def get_username_sorted(
-    sorting_type: str = Query(description='Enter a sorting type')
+    sorting_type: str = fastapi.Query(description='Enter a sorting type')
     ):
 
     if sorting_type == 'alphabetically':
@@ -110,15 +135,18 @@ def get_username_sorted(
 
 ### Requests:
 #### Installation:
-- In powershell : `pip install requests`
+- Under Windows in powershell : `pip install requests`
 - In python : `import requests`
 
 #### Usage:
-- Creation of a response object : `response = request.get(http://test-url.com)`
+- Creation of a response object : `response = requests.get(http://test-url.com)`
+- Creating a json dictionnary from a response object : `dictionnary = response.json()`
+
 
 ##### Response's object attributes:
 - `response.status_code` -> if 200 : valid response
 - `response.json()` -> return a json dictionnary
+- `response.text` -> retur a string
 
 #### Code example:
 ```python
@@ -144,16 +172,60 @@ while True:
     pokemon_info = get_pokemon_info(pokemon_name)
     if pokemon_info:
         print(f'Name: {pokemon_info['name']}')
-            for type in range(len(pokemon_info['types'])):
-                print(f'Type: {pokemon_info['types'][type]['type']['name']}')
-            
-            print(f'Weight: {pokemon_info['weight']}')
+        for type in range(len(pokemon_info['types'])):
+            print(f'Type: {pokemon_info['types'][type]['type']['name']}')
+        
+        print(f'Weight: {pokemon_info['weight']}')
+```
+
+### Beautiful soup:
+Need to also use requests' module
+
+#### Vocab:
+- A parser is something taking an html string and translating it to a nested structure
+
+#### Installation:
+- Windows : In powershell : `pip install beautifulsoup4`
+- Windows : In powershell, need to install a parser, one good choice is : `pip install lxml`
+- In python : `import bs4`
+- In python : `import lxml`
+
+#### Usage:
+- To create the soup : `soup = BeautifulSoup('html page as a string', 'parser as string')`
+- To make the soup more readable : `print(soup.prettify())`
+
+#### Example:
+```python
+
+from bs4 import BeautifulSoup
+import requests
+import lxml
+
+url = 'https://motherfuckingwebsite.com' 
+
+response = requests.get(url)
+response_text = response.text
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response_text, 'lxml')
+    print(soup.prettify())
+else:
+    print(f'Unable to return data {response.status_code}')
 ```
 
 ## .md files:
 - Are displayed well on github with "mise en forme"
 - Can be exported well as pdf files
 - Are usefull with the quick navigation outline from vscode 
+
+### How to use:
+- Creating bullets point : `-` / `+` / `*` 
+- Creating foldable (only in vscode) title: `#`, `##`, `###`, etc...
+- Creating code line : ` `
+- Creating code box (need to jump a line after opening and before ending) : 
+```python
+print('random code')
+```
 
 ## Interesting things to learn next:
 - Predefined values in fast API using an Enum class (check the official doc)
