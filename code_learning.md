@@ -1,4 +1,18 @@
 # List of usefull things learnt
+## Git:
+### Setup:
+- Inside root folder powershell terminal : `git init`
+- Add desired files / folders (still in powershell) : `git add file_name.suffix`
+- To ignore specifics files / folder, need to create a .gitignore file, and specifies
+files to be ignored.
+
+### Usage
+#### Saving your changes:
+- Save the files you've worked on
+- Go to the control tab in vs code
+- Stage changes (`+` sign) 
+- Apply a name to your changes (message box)
+- Press commit
 
 ## Virtual environnment:
 ### Creation
