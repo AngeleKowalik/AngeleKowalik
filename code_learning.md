@@ -108,6 +108,45 @@ def get_username_sorted(
         return sorted(username_list)
 ```
 
+### Requests:
+#### Installation:
+- In powershell : `pip install requests`
+- In python : `import requests`
+
+#### Usage:
+- Creation of a response object : `response = request.get(http://test-url.com)`
+
+##### Response's object attributes:
+- `response.status_code` -> if 200 : valid response
+- `response.json()` -> return a json dictionnary
+
+#### Code example:
+```python
+
+import requests
+base_url = 'https://pokeapi.co/api/v2'
+
+def get_pokemon_info(name):
+    url =   f'{base_url}/pokemon/{name}'
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        pokemon_data = response.json()
+        return pokemon_data
+    
+    else:
+        print (f'Failed to retrieve data {response.status_code}')
+
+while True:
+    print('Enter a pokemon name')
+    pokemon_name = input()
+    pokemon_info = get_pokemon_info(pokemon_name)
+    if pokemon_info:
+        print(f'Name: {pokemon_info['name']}')
+        print(f'Type: {pokemon_info['types'][0]['type']['name']}')
+        print(f'Weight: {pokemon_info['weight']}')
+```
+
 ## .md files:
 - Are displayed well on github with "mise en forme"
 - Can be exported well as pdf files
