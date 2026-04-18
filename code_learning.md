@@ -142,11 +142,15 @@ def get_username_sorted(
 - Creation of a response object : `response = requests.get(http://test-url.com)`
 - Creating a json dictionnary from a response object : `dictionnary = response.json()`
 
-
 ##### Response's object attributes:
 - `response.status_code` -> if 200 : valid response
 - `response.json()` -> return a json dictionnary
 - `response.text` -> retur a string
+
+#### Anti-bot work around:
+Sometimes when scrapping, anti-bot tools will flag you and ban your ip
+To avoid that, there are multiple tools at disposition:
+- Selenium : non bannable, open a real webpage (but is slow)
 
 #### Code example:
 ```python
@@ -178,6 +182,7 @@ while True:
         print(f'Weight: {pokemon_info['weight']}')
 ```
 
+
 ### Beautiful soup:
 Need to also use requests' module
 
@@ -193,6 +198,18 @@ Need to also use requests' module
 #### Usage:
 - To create the soup : `soup = BeautifulSoup('html page as a string', 'parser as string')`
 - To make the soup more readable : `print(soup.prettify())`
+- To return the first appearance of a tag : `soup.find('tag as string')`
+- To return all appearance of a tag as a list : `soup.find_all('tag as string)`
+- To print only the text without tags : `soup.text`
+
+#### How to work with html ?
+- Online, right click > `Inspecter l'élément`
+- Left upper corner in the new opened tab (dotted square with arrow) > 
+  `Select an element in the page to inspect it` -> allow to hover over element to 
+  pinpoint their html code
+- Network tab > clear network > Fetch/XHR > click on desired component -> allow you to 
+  spot which file is called (for example, when a button is pressed)
+
 
 #### Example:
 ```python
@@ -209,6 +226,9 @@ response_text = response.text
 if response.status_code == 200:
     soup = BeautifulSoup(response_text, 'lxml')
     print(soup.prettify())
+    title = soup.find('h1')
+    print(title.text)
+    
 else:
     print(f'Unable to return data {response.status_code}')
 ```
