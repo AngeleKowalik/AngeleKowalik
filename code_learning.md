@@ -233,6 +233,21 @@ else:
     print(f'Unable to return data {response.status_code}')
 ```
 
+## API:
+### recherche d'entreprise.gov:
+- main page -> https://recherche-entreprises.api.gouv.fr/docs/
+- swagger page -> https://petstore.swagger.io/?url=https%3A%2F%2Frecherche-entreprises.api.gouv.fr%2Fopenapi.json#/Recherche%20géographique/get_near_point 
+Allow to search for companies based on:
+    - NAF code
+    - Postal code
+    - Number of employees
+    - etc
+    
+#### How to use:
+- 7 requests max per seconds
+- If too many requests -> HTTPS 429 - Too Many Requests
+  Retry-After -> delay before next request
+
 ## .md files:
 - Are displayed well on github with "mise en forme"
 - Can be exported well as pdf files
@@ -247,5 +262,6 @@ else:
 print('random code')
 ```
 
-## Interesting things to learn next:
+# Interesting things to learn next:
 - Predefined values in fast API using an Enum class (check the official doc)
+- Learn playwright instead of selenium for complex scraping tasks
