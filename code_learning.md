@@ -19,7 +19,7 @@ files to be ignored.
 - Stage changes (`+` sign) 
 - Apply a name to your changes (message box)
 ##### To make name:
-- Follow the rule  (if applied this commit will...)add method to make commit
+- Follow the rule  (if applied this commit will...) add method to make commit
 - Create a title max 50 characters
 - Leave blanck line
 - use `-` and then write you have done and jump a line, repeat
@@ -52,7 +52,58 @@ Document BeautifulSoup module usage and refactor the rest of the document:
 - To create the list in cmd: pip freeze > requirements.txt 
 - To install from the list in cmd: pip install -r requirements.txt 
 
+## Built-in python:
+### Dictionnary
+A dictionnary is a repertory of key : value pair. When calling a key, it returns its
+pair value. 
+
+A key is a string but the value can be of any type even list or other dictionnaries
+
+- Creating a dictionnary
+  ```python
+  dictionnary = {
+    'key 1' : 'value 1',
+    'key 2' : 'value 2'
+    }
+  ```
+
+- Dictionnary comprehension iterate through the dictionnary and do an action on each
+  key : value pair
+  `key:  value for key, value in dictionnary.items() if value`
+
+### List
+A list in an ensemble of multiple items of any type, even an other list
+
+- Creating a list :
+  ```python
+  example_list = [
+    object_1, 
+    object_2
+  ]
+  ```
+
 ## Modules:
+### Standard library:
+#### Logging:
+Logging is a tool used to make your code cleared and easier to debug. It is good
+practice to log your code as you build it.
+
+While building your code, you can log in your console but once your app is released, you
+should log in a separate text file
+
+### Usage
+- `import logging` -> import the module logging
+- To initialize it: 
+  ```python
+  logging.basicConfig(
+    level=logging.DEBUG,
+    format= '%(asctime)s - %(levelname)s - %(message)s'
+    )
+  ```
+  Specify in `level=logging.` which one you want to see (you see all logs up to that 
+  level) : CRITICAL > ERROR > WARN > INFO > DEBUG > NOTSET 
+
+
 ### Fast API:
 documentation: https://fastapi.tiangolo.com/tutorial/path-params/#create-an-enum-class 
 
@@ -236,13 +287,13 @@ else:
 ## API:
 ### recherche d'entreprise.gov:
 - main page -> https://recherche-entreprises.api.gouv.fr/docs/
-- swagger page -> https://petstore.swagger.io/?url=https%3A%2F%2Frecherche-entreprises.api.gouv.fr%2Fopenapi.json#/Recherche%20géographique/get_near_point 
+- swagger page -> https://petstore.swagger.io/?url=https%3A%2F%2Frecherche-entreprises.api.gouv.fr%2Fopenapi.json
 Allow to search for companies based on:
     - NAF code
     - Postal code
     - Number of employees
     - etc
-    
+
 #### How to use:
 - 7 requests max per seconds
 - If too many requests -> HTTPS 429 - Too Many Requests
