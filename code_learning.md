@@ -4,6 +4,15 @@
 - [Markdown files guide](#md-files-and-how-to-work-with-them)
 - [Virtual environnment](#virtual-environnment)
 - Need to be updated
+## Usefuls keyboard shortcuts:
+### General
+- `ctr + f` -> Search for a word in a page
+- `ctr + s` -> Save a file
+- `ctr + x` -> Cut the selection
+- `ctr + v` -> Past the selection
+- `ctr + c` -> Copy the selection 
+- `ctr + z` -> Undo last action
+- `ctr + a` -> Selection all
 
 ## Git:
 ### Setup:
@@ -53,6 +62,54 @@ Document BeautifulSoup module usage and refactor the rest of the document:
 - To install from the list in cmd: pip install -r requirements.txt 
 
 ## Built-in python:
+### Operators:
+#### Arithmetics:
+- `+` -> addition
+- `-` -> substraction
+- `*` -> multiplication
+- `/` -> division
+- `//` -> floor division (donne le reste de la division)
+- `%` -> modulo (count until number on the left is reached then restart at 0)
+- `**` -> exponantial (square, cube, etc)
+
+#### Assignement operators:
+- `=` -> assign the value on the right to the string on the left
+- `+=` -> same as reassigning a value to itself and adding something to it
+  can be done with any arithmetic operator : 
+  ```python
+  variable_1 = 5
+  variable_1 -= 5
+  print(variable_1)
+  # variable_1 is equal to 0
+  ``` 
+
+#### Comparison operators:
+Returns a boolean
+- `==` -> True if left is equal to right
+- `!=` -> If different from equal
+- `>` -> Left is greater than right
+- `<` -> Left is smaller than right
+- `>=` -> Left is greater or equal to right
+- `<=` -> Right is smaller or equal to right
+
+#### Logical operators:
+- `and` -> True if both statements are True
+- `or` -> True if at least one statement is True
+- `not` -> Revert the result
+
+#### Identity operators:
+- `is` -> Return True if both variables are the same object
+- `is not` -> Return True if variables are not the same object
+
+#### Membership operators:
+- `in` -> Returns True if a sequence with the specified value is present in the object
+- `not in` -> Returns True if a sequence with the specified value is not present in 
+  the object
+
+### Loop:
+- `while True` -> allow to repeat a part of a program indifinately
+- `while variable < variable2` -> repeat until condition is met
+
 ### Dictionnary
 A dictionnary is a repertory of key : value pair. When calling a key, it returns its
 pair value. 
@@ -82,8 +139,46 @@ A list in an ensemble of multiple items of any type, even an other list
   ]
   ```
 
+### Handling errors:
+- Allow to handle errors without crashing the program, also help to diagnose errors
+  ```python
+  try:
+    print(int('un'))
+  except Exception as error:
+    print(error)
+  ```
+
 ## Modules:
 ### Standard library:
+#### Webbrowser:
+##### Initialization:
+- `import webbrowser` -> Import the module
+
+##### Usage:
+- `webbrowser.open(str(PATH_EXAMPLE.absolute()))` -> Open in a new window or in browser
+  the file located in the path. 
+
+#### Pathlib:
+Pathlib is used to write clearer, more concise and portable pathes
+
+##### Initialization:
+- `import Pathlib` -> Import the module
+- `from Pathlib import Path` -> Import most useful function
+- `PARENT_DIRECTORY: Path = Path(__file__).parent` -> Define file as root directory
+
+##### Usage:
+- `TEST_DIRECTORY = PARENT_DIRECTORY/'test.py'` -> Define a path to a specific file
+- `print(TEST_DIRECTORY.absolute())` -> Show the all path instead of the relative one.
+  Mandatory when working directly with the OS, else not needed.
+
+##### Example:
+```python
+PARENT_DIRECTORY:Path = Path(__file__).parent
+README_PATH: Path = PARENT_DIRECTORY/'README.md'
+# Open the specific file in a new window
+webbrowser.open(str(README_PATH.absolute()))
+```
+
 #### Logging:
 Logging is a tool used to make your code cleared and easier to debug. It is good
 practice to log your code as you build it.
