@@ -4,6 +4,23 @@
 - [Markdown files guide](#md-files-and-how-to-work-with-them)
 - [Virtual environnment](#virtual-environnment)
 - Need to be updated
+## Coding good practices:
+### General
+- DRY : don't repeat yourself -> if more than 3 time, put in a function
+- Single responsibility principle -> each function should do only one thing and be as 
+  modular as possible
+- Naming : action verbs for function, noun for variables, be as descriptive as possible
+- Name litteral number in form of constants at the beginning of the code so they can be 
+  changed easily
+- Never put an input() inside a function
+- Log frequently so its easier to debug afterward
+- Catch errors at the beginning of each functions
+
+### Python
+- Always use virtual environnement so python doesn't break or get messy
+- Use type hinting extensively
+- Always wrap executable block into `if __name__ == '__main__'`
+
 ## Usefuls keyboard shortcuts:
 ### General
 - `ctr + f` -> Search for a word in a page
@@ -110,23 +127,26 @@ Returns a boolean
 - `while True` -> allow to repeat a part of a program indifinately
 - `while variable < variable2` -> repeat until condition is met
 
-### Dictionnary
-A dictionnary is a repertory of key : value pair. When calling a key, it returns its
+### dictionary
+A dictionary is a repertory of key : value pair. When calling a key, it returns its
 pair value. 
 
-A key is a string but the value can be of any type even list or other dictionnaries
+A key is a string but the value can be of any type even list or other dictionaries
 
-- Creating a dictionnary
+- Creating a dictionary
   ```python
-  dictionnary = {
+  dictionary = {
     'key 1' : 'value 1',
     'key 2' : 'value 2'
     }
   ```
 
-- Dictionnary comprehension iterate through the dictionnary and do an action on each
+- dictionary comprehension iterate through the dictionary and do an action on each
   key : value pair
-  `key:  value for key, value in dictionnary.items() if value`
+  `key:  value for key, value in dictionary.items() if value`
+
+- `example_dictionary.get(user_input.lower(), 'Invalid key')`-> Try to find the first 
+  argument in the dictionary key list, if not found, return the second argument
 
 ### List
 A list in an ensemble of multiple items of any type, even an other list
@@ -286,11 +306,11 @@ def get_username_sorted(
 
 #### Usage:
 - Creation of a response object : `response = requests.get(http://test-url.com)`
-- Creating a json dictionnary from a response object : `dictionnary = response.json()`
+- Creating a json dictionary from a response object : `dictionary = response.json()`
 
 ##### Response's object attributes:
 - `response.status_code` -> if 200 : valid response
-- `response.json()` -> return a json dictionnary
+- `response.json()` -> return a json dictionary
 - `response.text` -> retur a string
 
 #### Anti-bot work around:
