@@ -41,6 +41,51 @@
 - To ignore specifics files / folder, need to create a .gitignore file, and specifies
 files to be ignored.
 
+### .gitignore:
+First thing to do after setuping a git repository: IT IS MANDATORY !!!
+Create a `.gitgnore` file and fill it with this:
+```
+desktop.ini
+*.code-workspace
+*.env
+*.venv/
+venv/
+__pycache__/
+*.DS_Store
+Thumbs.db
+*.py[cod]
+.ipynb_checkpoints/
+```
+
+#### Why ?
+##### Security
+- `*.env` -> Usually store passwords and API keys
+
+#### Bloat:
+- `desktop.ini` -> Machine specific, created automatically, useless (Windows only)
+- `.code-workspace` -> Used only in your own vscode environment
+- `venv/` -> Bloat Github for nothing. Should provide a requirements.txt instead
+- `__pycache__/` / `*.py[cod]` -> Bytecode version of your code so the machine can read
+  it faster, useless to include, will be recreated when first running.
+- `*.DS_Store` -> Same as desktop.ini but for Mac
+- `Thumbs.db` -> Preview pictures on Windows
+- `.ipynb_checkpoints/` -> Only when using Jupiter Notebook
+
+#### How ?
+- `*` is used to catch all files ending with the things afterward whatever the first
+  name is
+- `test_folder/` -> The backslach is used to catch a folder
+- `*.py[cod]` -> Catch any of the file ending in pyc, pyo or pyd
+
+#### If forgoten:
+You can still supress you .git and create a new repository but you will lose all your 
+historic.
+
+Anotther way is to scrub the .git : 
+- Save your current file in another folder, and a requirements.txt
+- In powershell on Windows : `pip install git-filter-repo`
+- git filter-repo --path folder_or_file_name --invert-paths
+
 ### Usage
 #### Saving your changes:
 - Save the files you've worked on
