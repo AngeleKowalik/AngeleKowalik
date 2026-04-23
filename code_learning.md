@@ -4,9 +4,10 @@
 - [Markdown files guide](#md-files-and-how-to-work-with-them)
 - [Virtual environnment](#virtual-environnment)
 - Need to be updated
+
 ## Coding good practices:
 ### General
-- DRY : don't repeat yourself -> if more than 3 time, put in a function
+- DRY : don't repeat yourself -> if more than 1 time, put in a function
 - Single responsibility principle -> each function should do only one thing and be as 
   modular as possible
 - Naming : action verbs for function, noun for variables, be as descriptive as possible
@@ -15,6 +16,8 @@
 - Never put an input() inside a function
 - Log frequently so its easier to debug afterward
 - Catch errors at the beginning of each functions
+- Explain precisely how a function works and what it returns under which conditions in 
+  the docstring
 
 ### Python
 - Always use virtual environnement so python doesn't break or get messy
@@ -33,8 +36,8 @@
 
 ## Git:
 ### Setup:
-- Inside root folder powershell terminal : `git init`
-- Add desired files / folders (still in powershell) : `git add file_name.suffix`
+- Inside root folder powershell terminal (windows only) : `git init`
+- Add desired files / folders (still in powershell / windows) : `git add file_name.suffix`
 - To ignore specifics files / folder, need to create a .gitignore file, and specifies
 files to be ignored.
 
@@ -127,15 +130,30 @@ Returns a boolean
 - `while True` -> allow to repeat a part of a program indifinately
 - `while variable < variable2` -> repeat until condition is met
 
-### dictionary
+### Types:
+A good practice is to make type hint on all objects in python. To do so, when you create
+an object put `: type` of the object. You can then use `->` followed by another type to 
+explicit what a function will return.
+
+```python
+def test_function(test_input: str, test_integer: int) -> None:
+  print(f'{test_input} and {test_integer}')
+```
+
+#### String:
+#### Integer:
+#### Float:
+
+#### Dictionary:
 A dictionary is a repertory of key : value pair. When calling a key, it returns its
 pair value. 
 
-A key is a string but the value can be of any type even list or other dictionaries
+A key is a string but the value can be of any type even list or other dictionaries.
+
 
 - Creating a dictionary
   ```python
-  dictionary = {
+  dictionary: dict = {
     'key 1' : 'value 1',
     'key 2' : 'value 2'
     }
@@ -148,7 +166,7 @@ A key is a string but the value can be of any type even list or other dictionari
 - `example_dictionary.get(user_input.lower(), 'Invalid key')`-> Try to find the first 
   argument in the dictionary key list, if not found, return the second argument
 
-### List
+#### List:
 A list in an ensemble of multiple items of any type, even an other list
 
 - Creating a list :
@@ -158,6 +176,14 @@ A list in an ensemble of multiple items of any type, even an other list
     object_2
   ]
   ```
+
+#### Tuples:
+
+#### Type related functions:
+- `str(variable)` -> Return a string version of the variable
+- `float(variable)` -> Return float
+- `int(variable)` -> Return integer
+- `isinstance(variable, type)` -> Return a boolean, True if variable is of the good type 
 
 ### Handling errors:
 - Allow to handle errors without crashing the program, also help to diagnose errors
@@ -305,10 +331,31 @@ def get_username_sorted(
 - In python : `import requests`
 
 #### Usage:
-- Creation of a response object : `response = requests.get(http://test-url.com)`
-- Creating a json dictionary from a response object : `dictionary = response.json()`
+#### requests.request
+Basic commande is `requests.request(method, url, **kwargs)
+Need to replace `.request` by a method
+List of parameters:
+- method : 
+  - `.get` -> give back a response object with the html code of the url fetched
+  - `.options`
+  - `.head`
+  - `.post`
+  - `.put`
+  - `.patch`
+  - `.delete`
+
+- url : just need to be entered as a string
+- optional parameters:
+  - `params :dict|tupl[list]` -> Used as a query that will be added to the url
+  - `headers :dict` -> Dictionary of HTTP Headers to send with the request. Used to 
+    bypass anti-bot services or to identify yourself as a bot
+  - `cookies :dict|CookieJar` -> Same as header
+  - `timeout :float|tuple` -> How many second to wait before giving up on a request
+
 
 ##### Response's object attributes:
+- Creation of a response object : `response = requests.get(http://test-url.com)`
+- Creating a json dictionary from a response object : `dictionary = response.json()
 - `response.status_code` -> if 200 : valid response
 - `response.json()` -> return a json dictionary
 - `response.text` -> retur a string
@@ -317,6 +364,7 @@ def get_username_sorted(
 Sometimes when scrapping, anti-bot tools will flag you and ban your ip
 To avoid that, there are multiple tools at disposition:
 - Selenium : non bannable, open a real webpage (but is slow)
+- Playwright : way more quick than selenium
 
 #### Code example:
 ```python
