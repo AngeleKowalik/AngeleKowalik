@@ -2,7 +2,7 @@
 
 ## Summary:
 - [Markdown files guide](#md-files-and-how-to-work-with-them)
-- [Virtual environnment](#virtual-environnment)
+- [Virtual environment](#virtual-environment)
 - Need to be updated
 
 ## Coding good practices:
@@ -11,7 +11,7 @@
 - Single responsibility principle -> each function should do only one thing and be as 
   modular as possible
 - Naming : action verbs for function, noun for variables, be as descriptive as possible
-- Name litteral number in form of constants at the beginning of the code so they can be 
+- Name literal number in form of constants at the beginning of the code so they can be 
   changed easily
 - Never put an input() inside a function
 - Log frequently so its easier to debug afterward
@@ -24,7 +24,7 @@
 - Use type hinting extensively
 - Always wrap executable block into `if __name__ == '__main__'`
 
-## Usefuls keyboard shortcuts:
+## Useful keyboard shortcuts:
 ### General
 - `ctr + f` -> Search for a word in a page
 - `ctr + s` -> Save a file
@@ -42,8 +42,8 @@
 files to be ignored.
 
 ### .gitignore:
-First thing to do after setuping a git repository: IT IS MANDATORY !!!
-Create a `.gitgnore` file and fill it with this:
+First thing to do after creating a git repository: IT IS MANDATORY !!!
+Create a `.gitignore` file and fill it with this:
 ```
 desktop.ini
 *.code-workspace
@@ -74,14 +74,14 @@ Thumbs.db
 #### How ?
 - `*` is used to catch all files ending with the things afterward whatever the first
   name is
-- `test_folder/` -> The backslach is used to catch a folder
+- `test_folder/` -> The backslash is used to catch a folder
 - `*.py[cod]` -> Catch any of the file ending in pyc, pyo or pyd
 
-#### If forgoten:
-You can still supress you .git and create a new repository but you will lose all your 
+#### If forgotten:
+You can still suppress your .git and create a new repository but you will lose all your 
 historic.
 
-Anotther way is to scrub the .git : 
+Another way is to scrub the .git : 
 - Save your current file in another folder, and a requirements.txt
 - In powershell on Windows : `pip install git-filter-repo`
 - git filter-repo --path folder_or_file_name --invert-paths
@@ -95,7 +95,7 @@ Anotther way is to scrub the .git :
 ##### To make name:
 - Follow the rule  (if applied this commit will...) add method to make commit
 - Create a title max 50 characters
-- Leave blanck line
+- Leave blank line
 - use `-` and then write you have done and jump a line, repeat
 - Press commit
 
@@ -110,7 +110,7 @@ Document BeautifulSoup module usage and refactor the rest of the document:
 - Update FastAPI import errors
 ```
 
-## Virtual environnment:
+## Virtual environment:
 ### Creation
 #### Under Windows
 - Open folder project terminal : right click on folder \ Open in Integrated Terminal
@@ -130,14 +130,14 @@ Document BeautifulSoup module usage and refactor the rest of the document:
 ### Operators:
 #### Arithmetics:
 - `+` -> addition
-- `-` -> substraction
+- `-` -> subtraction
 - `*` -> multiplication
 - `/` -> division
 - `//` -> floor division (donne le reste de la division)
 - `%` -> modulo (count until number on the left is reached then restart at 0)
-- `**` -> exponantial (square, cube, etc)
+- `**` -> exponential (square, cube, etc)
 
-#### Assignement operators:
+#### Assignment operators:
 - `=` -> assign the value on the right to the string on the left
 - `+=` -> same as reassigning a value to itself and adding something to it
   can be done with any arithmetic operator : 
@@ -172,7 +172,7 @@ Returns a boolean
   the object
 
 ### Loop:
-- `while True` -> allow to repeat a part of a program indifinately
+- `while True` -> allow to repeat a part of a program indefinitely
 - `while variable < variable2` -> repeat until condition is met
 
 ### Types:
@@ -250,7 +250,7 @@ A list in an ensemble of multiple items of any type, even an other list
   the file located in the path. 
 
 #### Pathlib:
-Pathlib is used to write clearer, more concise and portable pathes
+Pathlib is used to write clearer, more concise and portable paths
 
 ##### Initialization:
 - `import Pathlib` -> Import the module
@@ -298,10 +298,10 @@ documentation: https://fastapi.tiangolo.com/tutorial/path-params/#create-an-enum
 Url used to access a part of a website
 
 ##### Backend
-Thinking part of a programm, can be python for example
+Thinking part of a program, can be python for example
 
 ##### Frontend
-Part of a programm that is displayed to the user like buttons, pictures, etc
+Part of a program that is displayed to the user like buttons, pictures, etc
 
 ##### API
 The API is the thing in charge of the communication between the backend and the frontend
@@ -314,7 +314,7 @@ The API is the thing in charge of the communication between the backend and the 
 #### Initialization:
 - Creating an instance of the object FastAPI in python : app = FastAPI() 
 - Running the server :  
-    - Launch the programm
+    - Launch the program
     - In the console, type : fastapi dev main.py
 
 #### Usage:
@@ -335,12 +335,12 @@ def variable():
 - GET : fetch / read data from an endpoint : `@app.get('/username-base/user-1/')`       (viewing a user profile)
 - POST : create data : `@app.post('/username-base/user-1/')`                            (submitting a new user)
 - PUT : update data : `@app.put('/username-base/user-1/')`                              (changing username)
-- DELETE : delete data : `@app.delete('/usernambe-base/user-1/')`                       (removing an user)
+- DELETE : delete data : `@app.delete('/username-base/user-1/')`                        (removing an user)
 
 ###### Parameter usage: 
 - A parameter is something that will be entered in the website and be given to the backend
 - For exemple here, the last part of the url will be returned:
-- It is usefull to display a particular page such as the profile page of one user
+- It is useful to display a particular page such as the profile page of one user
 
 ```python
 @app.get('/get-username/{user_name}')
@@ -391,7 +391,7 @@ List of parameters:
 
 - url : just need to be entered as a string
 - optional parameters:
-  - `params :dict|tupl[list]` -> Used as a query that will be added to the url
+  - `params :dict|tuple[list]` -> Used as a query that will be added to the url
   - `headers :dict` -> Dictionary of HTTP Headers to send with the request. Used to 
     bypass anti-bot services or to identify yourself as a bot
   - `cookies :dict|CookieJar` -> Same as header
@@ -403,12 +403,12 @@ List of parameters:
 - Creating a json dictionary from a response object : `dictionary = response.json()
 - `response.status_code` -> if 200 : valid response
 - `response.json()` -> return a json dictionary
-- `response.text` -> retur a string
+- `response.text` -> return a string
 
 #### Anti-bot work around:
 Sometimes when scrapping, anti-bot tools will flag you and ban your ip
 To avoid that, there are multiple tools at disposition:
-- Selenium : non bannable, open a real webpage (but is slow)
+- Selenium : can not be banned, open a real webpage (but is slow)
 - Playwright : way more quick than selenium
 
 #### Code example:
@@ -510,7 +510,7 @@ Allow to search for companies based on:
 ## .md files:
 - Are displayed well on github with "mise en forme"
 - Can be exported well as pdf files
-- Are usefull with the quick navigation outline from vscode 
+- Are useful with the quick navigation outline from vscode 
 
 ### How to use:
 - Creating bullets point : `-` / `+` / `*` 
