@@ -1,4 +1,4 @@
-# List of usefull things learnt
+# List of useful things learnt
 
 ## Summary:
 - [Markdown files guide](#md-files-and-how-to-work-with-them)
@@ -171,6 +171,33 @@ Returns a boolean
 - `not in` -> Returns True if a sequence with the specified value is not present in 
   the object
 
+### If statement:
+#### Basic way:
+Comparison, logical, identity and membership operators returns boolean values.
+Booleans can be used with an if statement that will execute the code below only 
+`if True:`
+After an if statement, it is possible to add an `elif True:` statement that will execute
+only if the precedent statement was False and this one is True. You can add as many elif
+statements as you want.
+After the precedents statements, you can add an `else:` statement that will be triggered
+only if the precedent were not True. It can not have another condition.
+
+```python
+test = 1
+if test == 0:
+  print(f'Test = 0')
+elif test == 1:
+  print(f'Test = 1')
+else:
+  print(f'Unknown number')
+```
+
+#### Conditional expression / ternary operator:
+Another way to write an if statement is in the shape of a conditional expression. The
+value on the left of the if is returned only if the condition is True, else it will
+print the value on the right.
+`'Sunny' if Sunny == True else: 'Cloudy'`
+
 ### Loop:
 - `while True` -> allow to repeat a part of a program indefinitely
 - `while variable < variable2` -> repeat until condition is met
@@ -240,6 +267,38 @@ A list in an ensemble of multiple items of any type, even an other list
   ```
 
 ## Modules:
+### Package:
+You can create your own modules -> a package.
+It is recommended because it improve modularity and you don't have to copy paste your
+code in multiples files that makes them harder to debug ultimately.
+- `pyproject.toml` -> Put inside the folder, tell python this is a package. When you 
+  have done so, 
+- `pip install -e /path_to_the_folder` -> Make the package usable on your computer
+- `my_dev_toolkit @ git+https://github.com/YourUsername/my_dev_toolkit.git` -> In 
+  requirements.txt, allow people to use it as long as you've published the package on
+  github
+
+#### Example:
+dev_tools:
+  - .venv
+  - __init__.py
+
+    ```python
+    '''Collection of utilities for web and simulation purposes'''
+
+    from .filename import very_useful_function 
+
+    # Define what shows up if someone does "from dev_tools import *"
+    __all__ = [
+
+    ]
+
+    __version__ = "0.1.0"
+    __author__ = "Angèle Kowalik"
+  - 
+
+
+
 ### Standard library:
 #### Webbrowser:
 ##### Initialization:
@@ -524,3 +583,19 @@ print('random code')
 # Interesting things to learn next:
 - Predefined values in fast API using an Enum class (check the official doc)
 - Learn playwright instead of selenium for complex scraping tasks
+-
+
+
+Goal : 
+- Entering master sciences cognitives:
+  - Nailing my stat exam:
+    -  Loi Normale:
+      - Utilisation de la table
+      - Calcul des probabilité avec la loi normale centrée réduite
+      - Calcul de pourcentage avec la loi normale quelconque 
+    - Loi Binomiale: 
+      - Approximation d'une loi Binomiale par une loi de Poisson
+      - Approximation d'une loi Binomiale par une loi Normale
+    - 
+  - Learn pytest and implement it
+  - 
