@@ -18,6 +18,9 @@
 - Catch errors at the beginning of each functions
 - Explain precisely how a function works and what it returns under which conditions in 
   the docstring
+- When string will only trigger eventually use `"test placeholder '%s'", placeholder`
+  instead of an f-string because f-string are processed at the start of the program even
+  if they are not called
 
 ### Python
 - Always use virtual environnement so python doesn't break or get messy
@@ -279,26 +282,63 @@ code in multiples files that makes them harder to debug ultimately.
   github
 
 #### Example:
-dev_tools:
-  - .venv
-  - __init__.py
+- tools_package/ <- project root
+  - .venv/
+  - dev_tools/ <- the actual package that people import
+    - __init__.
+      ```python
+      '''Collection of utilities for web and simulation purposes'''
 
+      from .filename import very_useful_function 
+
+      # Define what shows up if someone does "from dev_tools import *"
+      __all__ = [
+
+      ]
+
+      __version__ = "0.1.0"
+      __author__ = "Angèle Kowalik"
+      ```
+    - module_name.py
+  - .gitignore
+    ``` 
+    desktop.ini
+    .venv/
+    ```
+  - pyproject.toml
     ```python
-    '''Collection of utilities for web and simulation purposes'''
+    [build-system]
+    # This section tells Python which tools to use to install your package
+    requires = ["setuptools>=61.0"]
+    build-backend = "setuptools.build_meta"
 
-    from .filename import very_useful_function 
+    [project]
+    name = "dev_toolkit"
+    version = "0.1.0"
+    description = "Shared module for web scraping, simulation, "
+    # Optional but will crash if specified and file not found
+    readme = "README.md"
+    requires-python = ">=3.13.5"
+    authors = [{ name = "Angèle Kowalik", email = "angele.kowalik@gmail.com"}]
 
-    # Define what shows up if someone does "from dev_tools import *"
-    __all__ = [
+    # These are the "Mandatory" libraries your tools need to work, needed for all files
+    dependencies = []
 
-    ]
+    [project.optional-dependencies]
+    # This is a feature allowing people to only install what they need. Not the same as the
+    # files but should be named similarly to not be lost 
+    networking = ["requests"]
+    parsers = ["beautifulsoup4"]
+    engines = ["pygame", "numpy"]
+    utils = []
 
-    __version__ = "0.1.0"
-    __author__ = "Angèle Kowalik"
-  - 
-
-
-
+    # Used to know where the code is located, just name the folder of the module
+    [tool.setuptools]
+    packages = ["dev_tools"] 
+    ```
+  - README.md
+    can be empty but mandatory for pyproject.toml to work if readme= is specified
+  
 ### Standard library:
 #### Webbrowser:
 ##### Initialization:
@@ -336,7 +376,7 @@ practice to log your code as you build it.
 While building your code, you can log in your console but once your app is released, you
 should log in a separate text file
 
-### Usage
+##### Usage
 - `import logging` -> import the module logging
 - To initialize it: 
   ```python
