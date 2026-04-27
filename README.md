@@ -11,7 +11,7 @@ Autodidacte en Python, ce Github contient les quelques outils que j'ai créé en
 Un fichier simple contenant l'ensemble des connaissances pratiques que j'ai accumulé 
 depuis que j'ai commencé à coder
 
-#### [dev toolkit](./tools_package/dev_tools)
+#### [dev toolkit](https://github.com/AngeleKowalik/dev_tools)
 Package de modules utilitaires crée à des fins de plus grande modularité et d'entretien 
 facilité entre mes différents projets
 
@@ -23,7 +23,7 @@ facilité entre mes différents projets
 ### Contact
 - Mail : angele.kowalik@gmail.com
 
-## Anglais
+## English
 ### Introduction
 Currently in my second year of Applied Foreign Langages studies and switching to 
 cognitive sciences
@@ -35,7 +35,7 @@ Learning Python by myself, my Github hold a few tools that I created while learn
 #### [Learning](./LEARNING.md)
 A simple file gathering all that I have learned since starting to code
 
-#### [dev toolkit](./tools_package/dev_tools)
+#### [dev toolkit](https://github.com/AngeleKowalik/dev_tools)
 Utilities modules package created for more modular code and easier upkeep between my
 projects
 
