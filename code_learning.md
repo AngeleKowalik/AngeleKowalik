@@ -335,6 +335,12 @@ code in multiples files that makes them harder to debug ultimately.
     # Used to know where the code is located, just name the folder of the module
     [tool.setuptools]
     packages = ["dev_tools"] 
+
+    [tool.ruff.lint]
+    select = ["D"]  # enables pydocstyle rules
+
+    [tool.ruff.lint.pydocstyle]
+    convention = "google"  # enforces Google style
     ```
   - README.md
     can be empty but mandatory for pyproject.toml to work if readme= is specified
@@ -623,19 +629,5 @@ print('random code')
 # Interesting things to learn next:
 - Predefined values in fast API using an Enum class (check the official doc)
 - Learn playwright instead of selenium for complex scraping tasks
--
-
-
-Goal : 
-- Entering master sciences cognitives:
-  - Nailing my stat exam:
-    -  Loi Normale:
-      - Utilisation de la table
-      - Calcul des probabilité avec la loi normale centrée réduite
-      - Calcul de pourcentage avec la loi normale quelconque 
-    - Loi Binomiale: 
-      - Approximation d'une loi Binomiale par une loi de Poisson
-      - Approximation d'une loi Binomiale par une loi Normale
-    - 
-  - Learn pytest and implement it
-  - 
+- Learn pytest and implement it
+  
