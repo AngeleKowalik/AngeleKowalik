@@ -26,6 +26,30 @@
 - Always use virtual environnement so python doesn't break or get messy
 - Use type hinting extensively
 - Always wrap executable block into `if __name__ == '__main__'`
+- Use composition over inheritance -> example : don't create a goat with 2 horns but
+  create a horn class that you pass as an argument when creating an instance of your 
+  goat so you can specify a goat with another number of horns if needed
+
+#### Docstring
+- example of a good docstring
+```
+def choice(user_input: str) -> bool|None:
+    """Interpret user input and return the corresponding result.
+
+    Args:
+        user_input: the value entered by the user. It is converted to lowercase.
+            Supported values: 'yes', 'no', 'exit'.
+
+    Returns:
+        True if user_input is 'yes'.
+        False if user_input is 'no'.
+        None and exit program if user_input is 'exit'.
+
+    Raises:
+        TypeError: If user_input is of an invalid type.
+        ValueError: If user_input is unsupported value.
+    """
+```
 
 ## Useful keyboard shortcuts:
 ### General
@@ -36,6 +60,10 @@
 - `ctr + c` -> Copy the selection 
 - `ctr + z` -> Undo last action
 - `ctr + a` -> Selection all
+
+### Visual Studio Code
+- `ctr + k` puis `ctr + 0` -> Collapse all code
+- `ctr + k` puis `ctr + j` -> Unfold all code
 
 ## Git:
 ### Setup:
