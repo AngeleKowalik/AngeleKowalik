@@ -654,6 +654,38 @@ Allow to search for companies based on:
 print('random code')
 ```
 
+## Maths
+### Algebra | l'algèbre
+#### Functions | les fonctions
+`f(x) = x + 10` -> la `fonction` nommée arbitrairement 'f' de la `variable` 'x' est égal
+à x + 10 : on dit que l'image de f de x est égal à x + 10
+
+`f(3) = 3 + 10 = 13` -> 3 est l'`antécédent` de 10 par la fonction 'f' tandis que 13 est 
+l'`image` de 3 par la fonction 'f'.
+
+On peut créer un `tableau de valeurs` regroupant quelques images pour des valeurs de x
+données. 
+
+x | -2  | -1  | 0   | 1   | 2
+
+f | 8   | 9   | 10  | 11  | 12
+
+On peut également créer une `représentation graphique`. L'`axe des abscisses` 
+(horizontal, de gauche à droite) représente `x` tandis que l'`axe des ordonnées` 
+(vertical, de bas en haut) correspond à `f(x)`.
+
+Une fonction mathématique c'est l'équivalent de :
+```python
+def function(x):
+  return x + 10
+# Return 13
+
+# L'image de 3 par la fonction function est 13
+# 3 est un des antécédents de 13 par la fonction function(x)
+print(function(3))
+```
+
+
 # Interesting things to learn next:
 - Predefined values in fast API using an Enum class (check the official doc)
 - Learn playwright instead of selenium for complex scraping tasks
