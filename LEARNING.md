@@ -448,7 +448,7 @@ The API is the thing in charge of the communication between the backend and the 
 - Creating an instance of the object FastAPI in python : app = FastAPI() 
 - Running the server :  
     - Launch the program
-    - In the console, type : fastapi dev main.py
+    - In the console, type : fastapi dev path/to/the/file/from/root/folder
 
 #### Usage:
 ##### Endpoint:
