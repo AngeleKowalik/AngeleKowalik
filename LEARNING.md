@@ -5,6 +5,14 @@
 - [Virtual environment](#virtual-environment)
 - Need to be updated
 
+# Vocabulary:
+- Subscriptable: An object that supports the `obj[key]` or `obj[index]` syntax
+- Immutable: An object whose state cannot be modified after it is created
+- Hashable: An object with a fixed value. Immutable types are hashable except when 
+  containing a mutable object
+- Atomic: A type that represents a single value (like int or bool) rather than a 
+  collection of values (like string)
+
 ## Coding good practices:
 ### General
 - DRY : don't repeat yourself -> if more than 1 time, put in a function
@@ -242,17 +250,78 @@ explicit what a function will return.
 def test_function(test_input: str, test_integer: int) -> None:
   print(f'{test_input} and {test_integer}')
 ```
+#### Numeric types
+Properties:
+  - Immutable
+  - Not a collection
+  - No index
 
-#### String:
-#### Integer:
-#### Float:
+##### Integer
 
-#### Dictionary:
-A dictionary is a repertory of key : value pair. When calling a key, it returns its
-pair value. 
+##### Float
+
+##### Complex numbers
+
+#### Sequence types
+Properties: 
+  - Ordered collection
+  - Subscriptable 
+
+##### List:
+Definition: A dynamic array. You can add, remove, or change items.
+Properties:
+  - Mutable
+
+- Creating a list :
+  ```python
+  example_list = [
+    object_1, 
+    object_2
+  ]
+  ```
+
+##### Tuples:
+Definition: A fixed sequence of items
+Properties:
+  - Immutable
+
+##### Range
+
+##### String:
+Definition: A collection of characters
+Properties: 
+  - Immutable
+
+String are values surrounded by quotation marks : 
+- `'this is a string'`
+- `"this is also a string"`
+String can contain any alphanumerical values
+
+They are shortened as `str`. 
+
+###### F-string
+Definition: Way of displaying a string, can also display variables and objects.
+
+```python
+variable = 1
+print(f'This is an f-string {variable}')
+# This is an f-string 1
+```
+
+Has multiple methods:
+- :2f -> after a variable, will only print 2 decimals
+
+#### Mapping type
+##### Dictionary:
+Definition: A dictionary is a repertory of key : value pair. When calling a key, it 
+returns its pair value. 
+
+Properties: 
+  - Mutable
+  - Ordered
+  - Key-based indexing
 
 A key is a string but the value can be of any type even list or other dictionaries.
-
 
 - Creating a dictionary
   ```python
@@ -264,23 +333,51 @@ A key is a string but the value can be of any type even list or other dictionari
 
 - dictionary comprehension iterate through the dictionary and do an action on each
   key : value pair
-  `key:  value for key, value in dictionary.items() if value`
+  `key:  value for key, value in dictionary.items() if value in (None, '')`
 
 - `example_dictionary.get(user_input.lower(), 'Invalid key')`-> Try to find the first 
   argument in the dictionary key list, if not found, return the second argument
 
-#### List:
-A list in an ensemble of multiple items of any type, even an other list
+- `test_function(**test_dictionary)` -> Will unpack each key values pair as an argument.
+  Keys should be exactly written as the function was written:
 
-- Creating a list :
   ```python
-  example_list = [
-    object_1, 
-    object_2
-  ]
+  def test_function(variable_1, variable_2):
+    print(variable_1, variable_2)
+
+  test_dictionary = {
+    'variable_1' : 'test',
+    'variable_2' : 'test_bis'
+  }
+
+  test_function(**test_dictionary)
   ```
 
-#### Tuples:
+#### Set type
+Definition: Unordered collection of unique items.
+
+Properties:
+  - Unordered
+  - Unique (duplicate values are removed automatically)
+  - No indexing
+
+##### Set 
+Properties: 
+  - Mutable
+##### Frozenset
+Properties:
+  - Immutable
+
+#### Boolean Type
+##### Boolean
+
+#### Binary types
+##### Bytes
+
+##### Bytearray
+
+#### None Type
+The absence of value represented by `None`
 
 #### Type related functions:
 - `str(variable)` -> Return a string version of the variable
@@ -496,7 +593,9 @@ def get_username(user_name: str = fastapi.Path(
 ```python
 @app.get('/get-username/')
 def get_username_sorted(
-    sorting_type: str = fastapi.Query(description='Enter a sorting type')
+  # Query(None) -> Parameters are not mandatory, user can avoid entering them. If no
+  # parameter entered by the user, will use None as a parameter
+    sorting_type: str = fastapi.Query(None, description='Enter a sorting type')
     ):
 
     if sorting_type == 'alphabetically':
