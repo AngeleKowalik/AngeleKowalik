@@ -395,6 +395,13 @@ The absence of value represented by `None`
   ```
 
 ## Modules:
+### Project specific modules
+A large code file should be separated into multiple smaller files called module.
+They are usually placed inside a `modules' folder`
+This folder should contain a `__init__.py` file to be recognized as a module by python.
+A module should contain function related to a subject and not to a particular library
+To call a module from the file : `from folder_name.file_name import something`
+
 ### Package:
 You can create your own modules -> a package.
 It is recommended because it improve modularity and you don't have to copy paste your
@@ -402,6 +409,7 @@ code in multiples files that makes them harder to debug ultimately.
 - `pyproject.toml` -> Put inside the folder, tell python this is a package. When you 
   have done so, 
 - `pip install -e /path_to_the_folder` -> Make the package usable on your computer
+- `from folder.module import function`
 - `my_dev_toolkit @ git+https://github.com/YourUsername/my_dev_toolkit.git` -> In 
   requirements.txt, allow people to use it as long as you've published the package on
   github
@@ -425,6 +433,7 @@ code in multiples files that makes them harder to debug ultimately.
       __author__ = "Angèle Kowalik"
       ```
     - module_name.py
+      `def random_function()`
   - .gitignore
     ``` 
     desktop.ini
@@ -469,7 +478,12 @@ code in multiples files that makes them harder to debug ultimately.
     ```
   - README.md
     can be empty but mandatory for pyproject.toml to work if readme= is specified
-  
+- new_project/
+  - main.py:
+    ```python
+    from dev_tools.module_name import random_function
+    ```
+
 ### Standard library:
 #### Webbrowser:
 ##### Initialization:
