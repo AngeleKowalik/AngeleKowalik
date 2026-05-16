@@ -5,13 +5,46 @@
 - [Virtual environment](#virtual-environment)
 - Need to be updated
 
-# Vocabulary:
+## Vocabulary:
 - Subscriptable: An object that supports the `obj[key]` or `obj[index]` syntax
+
 - Immutable: An object whose state cannot be modified after it is created
+
 - Hashable: An object with a fixed value. Immutable types are hashable except when 
-  containing a mutable object
+  containing a mutable object. Hashable object can be used as dictionary key.
+
 - Atomic: A type that represents a single value (like int or bool) rather than a 
   collection of values (like string)
+
+- Kernel: Link between softwares and hardware. As an example, Linux is a kernel.
+
+- Distro Linux: (distribution Linux): A bundle of programs allowing the kernel to be
+ used easily by the user. Ubuntu is a type of distro.
+
+- Compilation: code is fully converted in machine language before running (language like 
+  C -> create an .exe file)
+
+- Interpretation: code is read, translated into machine code and executed line by line 
+  without producing a full machine code file. (language like Python) -> can also be 
+  compiled in an .exe file if needed.
+
+- Scripting language: Programming language used to automate tasks or run sequences of 
+  commands quickly without compiling. Example: Python
+
+- Systems programming: Writing programs that interacts closely with the hardware or
+  operating system. Need compilation. Example: C.
+
+- Algorithm: List of clear and ordered steps to solve a problem.
+
+- Sorting algorithm (algorithme de tri): Method of arranging elements in an order
+
+- Types of sorting algorithms:
+  - Bubble sort
+  - Insertion sort
+  - Selection sort
+  - Merge sort
+  - Quick sort
+  - 
 
 ## Coding good practices:
 ### General
@@ -72,6 +105,68 @@ def choice(user_input: str) -> bool|None:
 ### Visual Studio Code
 - `ctr + k` puis `ctr + 0` -> Collapse all code
 - `ctr + k` puis `ctr + j` -> Unfold all code
+
+## Powershell
+- `mkdir folder/path` -> (make directory) Create a new folder at the path specified,
+  if the parent does not exist, create automatically a parent folder.
+
+## Linux
+Linux is the base of all operating systems (OS), it compose Windows for example. It is
+responsible for interaction between the softwares and the hardware.
+For personal use, we can install distro that are specific distribution of Linux
+including a graphical package to make the computer user friendly.
+
+### Installation
+#### WSL2
+- Download WSL2
+
+- Download: `ubuntu-jammy-wsl-amd64-ubuntu22.04lts.rootfs.tar.gz` on this website:
+  https://cloud-images.ubuntu.com/wsl/jammy/current/ 
+
+- In powershell: `mkdir C:\WSL\Ubuntu` -> Create an Ubuntu folder
+
+- In powershell: `wsl --import Ubuntu C:\WSL\Ubuntu C:\Users\Angèle\Downloads\ubuntu-jammy-wsl-amd64-ubuntu22.04lts.rootfs.tar.gz`-> 
+  - `--import`: Import an OS
+  - `Ubuntu`: Name given to the OS (chosen by the user)
+  - `C:\WSL\Ubuntu`: The folder where will be the OS
+  - `C:\Users\Angèle\Downloads\ubuntu-jammy-wsl-amd64-ubuntu22.04lts.rootfs.tar.gz`: The
+    path to the compressed OS
+
+- In powershell: `wsl -d Ubuntu` -> launch distro Ubuntu (just `wsl` if only one distro)
+
+- In Ubuntu: `adduser your_name` -> Add your username
+  Add a password after that
+
+- In Ubuntu: `echo -e "[user]\ndefault=your_name" | sudo tee /etc/wsl.conf` -> Set this
+  user as default
+
+- To close Ubuntu, just close the page and go in powershell to type: `wsl --shutdown`
+
+- To reopen it from powershell: `wsl -d Ubuntu` (or `wsl` if only one distro)
+
+- In powershell: `wsl -d Ubuntu -u root` -> Connect to the root folder and define 
+  password
+
+- In root: `usermod -aG sudo user_name`: Allow the user to use sudo
+
+### Usage
+- `adduser your_name`: Create a new user with a personal folder, password, etc
+- `echo "your text"`: Create text
+- `echo -e "your text\nThis is a new line`: Active the interpretation of special 
+  characters
+- `sudo`: (Super User Do) Execute the following command as administrator
+- `tee /file/path.random`: Write something in the file and display it in the terminal
+- `|`: Pass the result of the command typed on the left to the command typed on the 
+  right.
+  
+  Example: `echo "This text will be pasted in the file" | tee /folder/file.txt`: print
+  the text in the file
+- `&&`: Allow to chain the execution of two commands if the first one succeed
+- `sudo apt update`: Actualise softwares available version
+- `sudo apt upgrade -y`: Install all new available versions, `-y` allow not to confirm
+  every installation.
+
+
 
 ## Git:
 ### Setup:
@@ -331,6 +426,11 @@ A key is a string but the value can be of any type even list or other dictionari
     }
   ```
 
+If you do `dict_2 = dict_1`, dict_2 will be only a pointer to dict_1, that means that if dict_1 is modified, dict_2 will be as well.
+
+To really copy a dictionary we do:
+`dict_2 = dict_1.copy()`
+
 - dictionary comprehension iterate through the dictionary and do an action on each
   key : value pair
   `key:  value for key, value in dictionary.items() if value in (None, '')`
@@ -386,13 +486,23 @@ The absence of value represented by `None`
 - `isinstance(variable, type)` -> Return a boolean, True if variable is of the good type 
 
 ### Handling errors:
-- Allow to handle errors without crashing the program, also help to diagnose errors
+Allow to handle errors without crashing the program, also help to diagnose errors
+
   ```python
   try:
     print(int('un'))
   except Exception as error:
+    raise Exception
     print(error)
   ```
+
+If you want to except an error then raise it with an explanation, you can do:
+```python
+try:
+  print(int('un'))
+except ValueError:
+  raise ValueError('Invalid value, correct value are only numerical') from None
+```
 
 ## Modules:
 ### Project specific modules
@@ -505,6 +615,8 @@ Pathlib is used to write clearer, more concise and portable paths
 - `TEST_DIRECTORY = PARENT_DIRECTORY/'test.py'` -> Define a path to a specific file
 - `print(TEST_DIRECTORY.absolute())` -> Show the all path instead of the relative one.
   Mandatory when working directly with the OS, else not needed.
+- `TEST_DIRECTORY.parent/'random_folder'` -> .parent allow to go back in the parent 
+  folder
 
 ##### Example:
 ```python

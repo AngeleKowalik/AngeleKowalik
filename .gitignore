@@ -1,2 +1,6 @@
 *.ini
 *.vscode
+.venv
+ROADMAP.md
+test.py
+personnal_roadmap.md
