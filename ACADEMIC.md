@@ -158,6 +158,17 @@ later.
 Always make clear commit message so you can easily search through your history.
 
 #### Git remote
+Git only save on your machine, to connect your repository to the world (Github, 
+university, etc), you need to use `push` and `pull` commands.
+
+The default remote is conventionally named `origin`
+
+Main commands:
+  - `git remote add origin <url>`: Link your local repo to a remote for the first time.
+    "origin" is a conventional name for a remote.
+  - `git push <remote_name> <branch_name>`: Send your branch commits to the remote
+  - `git pull origin <branch_name`:	Fetch + merge remote commits into your local branch
+  - `git clone <url>`:	Download an entire remote repo to your machine
 
 
 #### Program: input → process → output
