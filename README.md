@@ -1,4 +1,6 @@
-## English
+# Presentation repository
+[English version](#en) | [Version française](#fr)
+## <span id="en">English</span>
 ### Introduction
 Currently in my second year of Applied Foreign Languages studies (English and German) 
 and reorienting toward Computer Science at FST Nancy.
@@ -23,7 +25,7 @@ projects
 ### Contact
 - Mail : angele.kowalik@gmail.com
 
-## Français
+## <span id='fr'>Français</span>
 ### Présentation
 Étudiant en L2 LEA Anglais - Allemand en cours de réorientation vers la Licence 
 Informatique à la FST Nancy.
