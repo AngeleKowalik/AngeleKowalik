@@ -15,7 +15,7 @@ A simple file gathering all that I have learned since starting to code
 Utilities modules package created for more modular code and easier upkeep between my
 projects
 
-### Spoken lanugages
+### Spoken languages
 - French : native
 - English : C1 (LEA)
 - German : B1
