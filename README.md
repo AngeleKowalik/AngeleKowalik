@@ -1,11 +1,14 @@
-# Presentation repository
+# Hi, I'm Angèle! 👋
 [English version](#en) | [Version française](#fr)
-## <span id="en">English</span>
+
+<span id="en"></span>
+
+## English
 ### Introduction
 Currently in my second year of Applied Foreign Languages studies (English and German) 
 and reorienting toward Computer Science at FST Nancy.
 
-Learning Python by myself, my Github holds a few tools that I created while learning.
+Learning Python by myself, my GitHub holds a few tools that I created while learning.
 I am particularly interested in evolutionary algorithms and simulations.
 
 ### My projects
@@ -17,20 +20,27 @@ A simple file gathering all that I have learned since starting to code
 Utilities modules package created for more modular code and easier upkeep between my
 projects
 
+#### [job-finder-CLI](https://github.com/AngeleKowalik/job-finder)
+A command-line tool interacting with the French governmental API 
+`recherche-entreprise.gov`, allowing users to quickly filter companies relevant to 
+their career path.
+
 ### Spoken languages
 - French : native
 - English : C1 (LEA)
 - German : B1
 
 ### Contact
-- Mail : angele.kowalik@gmail.com
+- E-Mail : angele.kowalik@gmail.com
 
-## <span id='fr'>Français</span>
+<span id="fr"></span>
+
+## Français
 ### Présentation
-Étudiant en L2 LEA Anglais - Allemand en cours de réorientation vers la Licence 
+Étudiant en L2 LEA (Anglais - Allemand) en cours de réorientation vers la Licence 
 Informatique à la FST Nancy.
 
-Autodidacte en Python, ce Github contient les quelques outils que j'ai créés en 
+Autodidacte en Python, ce GitHub contient les quelques outils que j'ai créés en 
 apprenant. Je suis particulièrement intéressé par les algorithmes évolutifs et les 
 simulations.
 
@@ -41,8 +51,12 @@ Un fichier simple contenant l'ensemble des connaissances pratiques que j'ai accu
 depuis que j'ai commencé à coder
 
 #### [python-toolkit](https://github.com/AngeleKowalik/python-toolkit)
-Package de modules utilitaires créé à des fins de plus grande modularité et d'entretien
-facilité entre mes différents projets
+Package de modules utilitaires créé à des fins de plus grande modularité et de 
+maintenance facilitée entre mes différents projets
+
+#### [CLI de recherche d'emplois](https://github.com/AngeleKowalik/job-finder)
+Un CLI permettant de rechercher des entreprises adaptées à la carrière de l'utilisateur 
+depuis l'API gouvernementale française `recherche-entreprise.gov`.
 
 ### Langues parlées
 - Français : natif
