@@ -1,10 +1,5 @@
 # List of useful things learnt
 
-## Summary:
-- [Markdown files guide](#md-files-and-how-to-work-with-them)
-- [Virtual environment](#virtual-environment)
-- Need to be updated
-
 ## Vocabulary:
 - Subscriptable: An object that supports the `obj[key]` or `obj[index]` syntax
 

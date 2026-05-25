@@ -2,5 +2,8 @@
 *.vscode
 .venv
 ROADMAP.md
-test.py
+*.py
+.pytest_cache
 personnal_roadmap.md
+__pycache__
+flashcard_prompt.md
