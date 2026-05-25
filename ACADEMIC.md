@@ -195,6 +195,20 @@ __pycache__/
 A file already added to a repository will not be suppressed just by updating the 
 .gitignore
 
+#### Git branches
+Branches are independent lines of development. One can be modified without changing
+another. It is very useful to implement new features while keeping a working program.
+
+The default branch is named `main`. You can create an exact copy of it by creating a new
+branch from it. Then merge it back into `main`. 
+
+Mains commands:
+- `git branch`: List all branches
+- `git branch <parent/child>`: Create a branch named `parent/child` from the current
+  active branch (the `/` is just cosmetic, there is no parent / child link)
+- `git switch <branch_name>`: Define the branch as the active one.
+- `git merge <branch_name>`: Merge the branch with into your active branch.
+
 #### Program: input → process → output
 Definition: 
   - Program: A set of instructions that transforms input into output via a process.
