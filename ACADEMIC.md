@@ -240,8 +240,8 @@ sequential.
 Variables and functions must be defined before calling them.
 
 
-#### Python: syntax and types
-##### Numbers: int, float
+### Python: syntax and types
+#### Numbers: int, float
 int: integer -> whole number (3, -2, etc)
 float: float -> decimals (2.63, -1.98, etc)
 
@@ -258,3 +258,27 @@ For exact decimal arithmetic (e.g., money), Python provides the decimal module.
 
 We can truncate a float into an integer with `int(3.9)` -> Return 3
 We can create a float from an integer with `float(3)` -> Returns 3.0
+
+#### Booleans
+Definition: 
+  - Truthiness: A concept that evaluate if an object is `True` or `False`.
+
+Bools are used in every conditions written in Python. They have two values: `True` or 
+`False`.
+
+A boolean (bool) is a subclass of integers. `True` behaves as `1` and `False` as `0`. 
+For example `isinstance(True, int)` is truthy. 
+`True == 1` and `False == 0` are both truthy as well.
+However `bool("0")` is also truthy because the string is not empty.
+
+The only falsy values (when NOT in another class) are:
+  - `0`
+  - `0.0`
+  - `""`
+  - `[]`
+  - `{}`
+  - `()`
+  - `None`
+  - `False`
+
+
