@@ -281,4 +281,24 @@ The only falsy values (when NOT in another class) are:
   - `None`
   - `False`
 
+#### String
+Definition: 
+  - A string: (str) An ordered immutable sequence of characters.
+  - Immutable: Once created, can not be modified.
+  - Ordered: Each characters sits at a numbered position named index.
+  - Half-open interval: The interval include that starting borne but exclude the ending
+    one. The standard annotation is `[start, stop)`.
 
+Indexes starts at 0 from the left to -1 from the right
+You can slice any types that are indexables. It allow you to extract information from
+specifics indexes.
+
+To slice:
+`random_string[<start>, <stop>, <step>]`
+- start: Include the index entered, default is 0
+- stop: Exclude the index entered, default is -1
+- step: Increment, default is 1 (if negative, from right to left). Can be any non zero
+  integer.
+
+Out of ranges slices do not raise an error while out of range indexed raise an
+IndexError. 
