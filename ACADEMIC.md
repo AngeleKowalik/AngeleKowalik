@@ -327,6 +327,48 @@ Main commands (using variable named `test` containing a string):
     `-1` if word is not found.
   - `test.startswith('old')`: Return a bool.
   - `test.endswith('old')`: Return a bool.
-  - `test.split('old')`: Return a of separated strings.
+  - `test.split('old')`: Return a list of separated strings.
+
+#### Variable assignment
+In python, a variable is a reference that point to an object in memory, it is not the
+objet itself.
+
+Using `=` make a label point to an object but does not copy it.
+
+Python is dynamically typed, a variable has no fixed type, the object it point to does.
+
+```python
+# Basic assignment
+score = 42          # label 'score' points to the int object 42
+
+# Dynamic typing — the label can be repointed to any type
+score = "forty-two" # now points to a str object — valid in Python
+
+# Augmented assignment
+score = 10
+score += 3   # equivalent to score = score + 3  → 13
+score *= 2   # equivalent to score = score * 2  → 26
+score //= 4  # equivalent to score = score // 4 → 6
+
+# Multiple assignment
+x = y = z = 0       # all three labels point to the same object 0
+
+# Tuple unpacking (multiple assignment from a sequence)
+a, b = 10, 20       # a → 10, b → 20
+a, b = b, a         # swap — no temporary variable needed
+```
+
+Naming rules for variables:
+  - Must start with a letter or underscore _
+  - Can contain letters, digits, underscores — no spaces, no hyphens
+  - Case-sensitive: Score and score are two different variables
+  - Cannot be a reserved keyword: if, for, while, True, False, None, and, or, not… etc.
+  - Convention (PEP 8): use snake_case for variables (my_score, not myScore)
+
+Common traps:
+  - Augmented assignment on immutable types still creates a new object. `x += 1`
+  - Keywords cannot be used as variable names.
+
+
 
 
