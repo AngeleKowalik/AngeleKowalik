@@ -282,6 +282,7 @@ The only falsy values (when NOT in another class) are:
   - `False`
 
 #### String
+##### String basics
 Definition: 
   - A string: (str) An ordered immutable sequence of characters.
   - Immutable: Once created, can not be modified.
@@ -298,7 +299,34 @@ To slice:
 - start: Include the index entered, default is 0
 - stop: Exclude the index entered, default is -1
 - step: Increment, default is 1 (if negative, from right to left). Can be any non zero
-  integer.
+  integer. If zero, raise a ValueError.
 
 Out of ranges slices do not raise an error while out of range indexed raise an
 IndexError. 
+
+To only change one character in a string: 
+`random_string = random_string[:3] + "N" + random_string[4:]`
+
+##### String method
+Definitions:
+  - A method: A built-in function that is called using a dot notation.
+
+Method does not change the original string but returns a new one instead so you need to
+reassign the result or use it immediately.
+
+Main commands (using variable named `test` containing a string):
+  - `test.upper()`: Make all characters upper case.
+  - `test.lower()`: Make all characters upper case.
+  - `test.capitalize()`: Capitalize the first letter of the string.
+  - `test.title()`: Capitalize the first letter of each words.
+  - `test.strip()`: Remove trailing and leading white spaces.
+  - `test.replace('old', 'new')`: Replace old occurrences of `old` by `new` (can add the 
+    number of occurrence to replace, default is all)
+  - `test.count('old')`: Count all occurrences of `old`.
+  - `test.find('old')`: Return the index of the first letter of the word found, return
+    `-1` if word is not found.
+  - `test.startswith('old')`: Return a bool.
+  - `test.endswith('old')`: Return a bool.
+  - `test.split('old')`: Return a of separated strings.
+
+
