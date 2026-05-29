@@ -845,6 +845,23 @@ else:
     print(f'Unable to return data {response.status_code}')
 ```
 
+### sentence transformers
+A library used for image, text or speech recognition.
+Definitions:
+  - A document: The entity that you store in your database and that you want to search 
+    for.
+  - A query: The input of the user, will be the thing that will be searched for in the 
+    database.
+  - An embedding: Process of translating a document or an input in a vector 
+  
+A typical recognition vector is composed of 512 or 768 values. 768 is not a power of 2 
+but AI typically divides vector in sub vectors that will be computed in parallel on the
+GPU. The standard is 12 sub vectors which make 768 / 12 = 64 or 64 is a power of 2. 
+
+To install it:
+`pip install -U sentence-transformers`
+
+
 ## API:
 ### recherche d'entreprise.gov:
 - main page -> https://recherche-entreprises.api.gouv.fr/docs/

@@ -207,7 +207,7 @@ Mains commands:
 - `git branch <parent/child>`: Create a branch named `parent/child` from the current
   active branch (the `/` is just cosmetic, there is no parent / child link)
 - `git switch <branch_name>`: Define the branch as the active one.
-- `git merge <branch_name>`: Merge the branch with into your active branch.
+- `git merge <branch_name>`: Merge the branch named into your active branch.
 
 #### Program: input → process → output
 Definition: 
@@ -329,7 +329,8 @@ Main commands (using variable named `test` containing a string):
   - `test.endswith('old')`: Return a bool.
   - `test.split('old')`: Return a list of separated strings.
 
-#### Variable assignment
+#### Variable
+##### Variable assignment
 In python, a variable is a reference that point to an object in memory, it is not the
 objet itself.
 
@@ -360,7 +361,7 @@ a, b = b, a         # swap — no temporary variable needed
 
 Naming rules for variables:
   - Must start with a letter or underscore _
-  - Can contain letters, digits, underscores — no spaces, no hyphens
+  - Can contain letters, digits, underscores but no spaces, no hyphens
   - Case-sensitive: Score and score are two different variables
   - Cannot be a reserved keyword: if, for, while, True, False, None, and, or, not… etc.
   - Convention (PEP 8): use snake_case for variables (my_score, not myScore)
@@ -368,7 +369,16 @@ Naming rules for variables:
 Common traps:
   - Augmented assignment on immutable types still creates a new object. `x += 1`
   - Keywords cannot be used as variable names.
+  - Augmented assignment on immutable tye still create a new object 
 
+##### Variable scope
+The scope is where your variable is visible and accessible. If it is not well defined,
+it can cause bugs like `NameError` or overwrite another variable. 
 
+Python resolve variables by searching though scope in this order known as the `LEGB rule`:
+1) Local
+2) Enclosing
+3) Global
+4) Built-in
 
-
+The search stop at the first match found
