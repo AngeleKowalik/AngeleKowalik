@@ -44,10 +44,12 @@ Features:
 
 ### Linux basics
 Definition:
-  - A distro: One distribution of Linux with all that is needed to make a computer usable.
+  - A distro: One distribution of Linux with all that is needed to make a computer 
+    usable.
   - An operating system kernel: A program written in binary managing the hardware
   - A terminal: A window containing a shell.
-  - A shell: A program written in binary sending commands typed by the user to the kernel.
+  - A shell: A program written in binary sending commands typed by the user to the 
+    kernel.
   - Bash (Bourn Again Shell): Default shell on most Linux systems.
   - Current working directory: The directory you are currently in.
   - a flag: An option for a Linux command
@@ -214,7 +216,8 @@ Definition:
   - Program: A set of instructions that transforms input into output via a process.
   - Input: Data or signals received from the user, files, sensors, network, etc.
   - Process: Computation, decision-making, or transformation done by the program.
-  - Output: The result produced by the program. Can be visible (screen, file) or invisible
+  - Output: The result produced by the program. Can be visible (screen, file) or 
+    invisible
   (system update, internal state).
   - Common mistakes: Confusing process vs output, thinking programs always show results, 
     ignoring multiple input sources.
@@ -245,11 +248,13 @@ Variables and functions must be defined before calling them.
 int: integer -> whole number (3, -2, etc)
 float: float -> decimals (2.63, -1.98, etc)
 
-Python automatically switch between int and float when needed. Can do standard arithmetics operations on them.
+Python automatically switch between int and float when needed. Can do standard 
+arithmetics operations on them.
 
 Operator precedence is applied in Python. 
 
-Mixing int and float in loops or conditions can produce unexpected effects and should be avoided.
+Mixing int and float in loops or conditions can produce unexpected effects and should be 
+avoided.
 
 Float is a binary approximation of a decimal number so small errors are expected.
 So we should not use exact comparison on float but instead use tolerance.
@@ -372,13 +377,60 @@ Common traps:
   - Augmented assignment on immutable tye still create a new object 
 
 ##### Variable scope
+###### General case
 The scope is where your variable is visible and accessible. If it is not well defined,
 it can cause bugs like `NameError` or overwrite another variable. 
 
-Python resolve variables by searching though scope in this order known as the `LEGB rule`:
+Python resolve variables by searching though scope in this order known as the 
+`LEGB rule`:
 1) Local
 2) Enclosing
 3) Global
 4) Built-in
 
 The search stop at the first match found
+
+###### global keyword
+A variable outside a function is qualified as `global`.
+A variable inside the outer function of a nested functions is called `enclosing`.
+One inside a function called `local`.
+
+To use a global variable inside a function, you can use the `global` keyword, however it 
+is considered bad practice in production code and should be done sparingly:
+
+```python
+# Global scope
+counter = 0 
+
+def increment():
+  # Declare intent to use the global variable
+  global counter
+  counter += 1
+
+# counter in the global scope == 1
+```
+`built-in` functions have their own scope and are available everywhere
+
+The `global` keyword is only needed when assigning, not reading.
+
+###### nonlocal keyword
+You can use `nonlocal` keywords inside an inner nested function to use the variable from 
+the outer scope of the function.
+
+```python
+test_1 = 1
+
+def outer():
+    global test_1
+    test_1 = 0
+    test_2 = 3
+
+    def inner():
+        nonlocal test_2
+        test_2 = 5
+    
+    inner()
+    return test_1, test_2
+
+print(outer())
+```
