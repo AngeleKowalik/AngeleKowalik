@@ -440,3 +440,77 @@ print(outer())
 ```
 
 #### Operations
+##### Comparison
+Definition:
+  - Comparison operator: In Python, a symbol used to test the relationship between two 
+  entities, resulting in a strict Boolean evaluation (True or False).
+
+###### Equality and inequality
+Main commands:
+  - `==`: Evaluates if two values are exactly equal.
+  - `!=`: Evaluates if two values are strictly not equal.
+
+Common traps:
+  - Comparing identical characters stored as completely different data types (e.g., 
+  `10 == "10"` evaluates to `False`).
+  - Comparing calculated decimals with == (e.g., `0.1 + 0.2 == 0.3` evaluates to `False` 
+  due to machine-level memory architecture).
+
+###### Value Comparisons (Order Operators)
+Definition:
+  - Order Operators: A subset of comparison operators that evaluate the mathematical or 
+  lexicographical (alphabetical) ranking between two values.
+
+Main commands/syntax:
+  - `<` / `>`: Strict inequalities. Evaluates to `True` only if the values are 
+  distinctly different and ordered correctly.
+  - `<=` / `>=`: Non-strict (inclusive) inequalities. Evaluates to `True` if the 
+  condition is met OR if the values are exactly equal.
+
+Common traps:
+  - Strings are evaluated by raw ASCII/Unicode values, meaning uppercase letters 
+  evaluate as "less than" lowercase letters (e.g., `"Zebra" < "apple"` is `True`).
+
+###### Memory References (Identity Operators)
+Definition:
+  - Identity Operators: Operators that evaluate whether two variables point to the exact 
+  same physical object (memory address/reference), regardless of their content.
+
+Main commands/syntax:
+  - `is`: Evaluates to `True` if both variables reference the exact same object in 
+  memory.
+  - `is not`: Evaluates to `True` if the variables reference different objects in 
+  memory.
+
+Common traps:
+  - Python reuses memory for small integers (0-256) for optimization, causing 
+  unpredictable `is` evaluations for numbers. Never use `is` for integers.
+  - Assuming copies share identity. Creating `list_b = list(list_a)` makes identical 
+  content (`==` is True) but distinct objects (`is` is False). Modifying one will not 
+  affect the other.
+  - Using `== None` is academically discouraged and potentially unsafe due to custom 
+  object overrides. The formal PEP 8 standard dictates always using `is None` to check 
+  for null values.
+
+###### Chained Comparisons
+Definition:
+  - Chained Comparisons: A Python syntax feature allowing multiple comparison operators 
+  to be linked continuously (e.g., `x < y <= z`) to evaluate ranges directly.
+
+Main commands/syntax:
+  - `a < b < c`: Syntactic sugar translated internally by the interpreter to 
+  `(a < b) and (b < c)`.
+
+Mechanics:
+  - Short-circuit Evaluation: The interpreter evaluates the chain from left to right. If 
+  any condition evaluates to `False`, the system instantly stops checking the rest of 
+  the chain to save CPU cycles.
+
+Common traps:
+  - Attempting to chain comparisons in strictly typed languages (C/Java) evaluates the 
+  first pair to a literal boolean (`1` or `0`), breaking the math on the second pair.
+  - Chaining mathematically opposing operators (e.g., `a < b > c`) is valid syntax but 
+  violates readability standards; chains should always represent a continuous range.
+  - A function placed in the middle of a chain (e.g., `a < func() < b`) is strictly 
+  evaluated only *once*, unlike using manual `and` operators where the function would 
+  execute twice.
