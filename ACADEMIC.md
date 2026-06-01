@@ -1,47 +1,5 @@
 # L1 Licence Informatique
-## Imperative Programming
-### Pagers
-Definitions:
-  - a pager: An utility program used to view the content of a text file or command
-    command output one page at a time.
-
-Common types of pager:
-  - Less: The current standard
-  - More: The old version of less
-
-Shared commands:
-  - `q` (Quit): Quit the pager
-  - `h` (Help): Show all the commands of the pager
-  - `Space`: Scroll down one page
-  - `b` (Back): Go back to the previous page
-  - `Enter`: Go one line down
-  - `y` or `k`: Go one line up
-  - `g`: Go to the beginning of the file
-  - `G`: Go to the end of the file
-  - `-N`: Allow to see line's numbers
-  - `26g`: Go to the line 26
- 
-
-#### Less
-Features:
-  - Can go forward and backward
-  - Load only what you see
-  - Can search through the file with `/`
-
-Commands:
-  - `-i`: Toggle case insensitive search for all following search, to disable, type it 
-    again
-  - `/pattern`: Search for the word "pattern"
-  - `?pattern`: Search backward for the word "pattern"
-  - `n`: Find the next occurrence of a search
-  - `N`: Find the previous occurrence of a search
-
-#### More
-Features:
-  - Only goes forward
-  - Load the whole file at once
-  - Only limited search ability
-
+## Prerequisites
 ### Linux basics
 Definition:
   - A distro: One distribution of Linux with all that is needed to make a computer 
@@ -129,6 +87,49 @@ Common associations:
 - `grep` is case sensitive by default, use `grep -i` for case insensitive
 - `>` silently overwrite without confirmation
 
+### Pagers
+Definitions:
+  - a pager: An utility program used to view the content of a text file or command
+    command output one page at a time.
+
+Common types of pager:
+  - Less: The current standard
+  - More: The old version of less
+
+Shared commands:
+  - `q` (Quit): Quit the pager
+  - `h` (Help): Show all the commands of the pager
+  - `Space`: Scroll down one page
+  - `b` (Back): Go back to the previous page
+  - `Enter`: Go one line down
+  - `y` or `k`: Go one line up
+  - `g`: Go to the beginning of the file
+  - `G`: Go to the end of the file
+  - `-N`: Allow to see line's numbers
+  - `26g`: Go to the line 26
+ 
+
+#### Less
+Features:
+  - Can go forward and backward
+  - Load only what you see
+  - Can search through the file with `/`
+
+Commands:
+  - `-i`: Toggle case insensitive search for all following search, to disable, type it 
+    again
+  - `/pattern`: Search for the word "pattern"
+  - `?pattern`: Search backward for the word "pattern"
+  - `n`: Find the next occurrence of a search
+  - `N`: Find the previous occurrence of a search
+
+#### More
+Features:
+  - Only goes forward
+  - Load the whole file at once
+  - Only limited search ability
+
+
 ### Git
 Git is a version control system taking snapshot of your projects at given time so you
 can go back to any previous state.
@@ -211,6 +212,9 @@ Mains commands:
 - `git switch <branch_name>`: Define the branch as the active one.
 - `git merge <branch_name>`: Merge the branch named into your active branch.
 
+
+## Imperative Programming: Python concepts
+### Fundamental concepts
 #### Program: input → process → output
 Definition: 
   - Program: A set of instructions that transforms input into output via a process.
@@ -222,7 +226,7 @@ Definition:
   - Common mistakes: Confusing process vs output, thinking programs always show results, 
     ignoring multiple input sources.
 
-#### Debugging: bugs and classic errors
+##### Debugging: bugs and classic errors
 Definitions:
 - Bug: An error in a program that causes incorrect behaviors or crashes.
 - Debugging: The process of finding and fixing bugs.
@@ -235,7 +239,7 @@ Types of bugs:
   by zero, wrong type, etc...)
 
 
-#### Sequential execution
+##### Sequential execution
 Definition: 
 Code statements run one after the another top to bottom, not simultaneously.
 Loops and conditions can change the natural top-down flow but otherwise the execution is
@@ -243,8 +247,8 @@ sequential.
 Variables and functions must be defined before calling them.
 
 
-### Python: syntax and types
-#### Numbers: int, float
+#### Python: syntax and types
+##### Numbers: int, float
 int: integer -> whole number (3, -2, etc)
 float: float -> decimals (2.63, -1.98, etc)
 
@@ -264,7 +268,7 @@ For exact decimal arithmetic (e.g., money), Python provides the decimal module.
 We can truncate a float into an integer with `int(3.9)` -> Return 3
 We can create a float from an integer with `float(3)` -> Returns 3.0
 
-#### Booleans
+##### Booleans
 Definition: 
   - Truthiness: A concept that evaluate if an object is `True` or `False`.
 
@@ -286,8 +290,8 @@ The only falsy values (when NOT in another class) are:
   - `None`
   - `False`
 
-#### String
-##### String basics
+##### String
+###### String basics
 Definition: 
   - A string: (str) An ordered immutable sequence of characters.
   - Immutable: Once created, can not be modified.
@@ -312,7 +316,7 @@ IndexError.
 To only change one character in a string: 
 `random_string = random_string[:3] + "N" + random_string[4:]`
 
-##### String method
+###### String method
 Definitions:
   - A method: A built-in function that is called using a dot notation.
 
@@ -334,8 +338,8 @@ Main commands (using variable named `test` containing a string):
   - `test.endswith('old')`: Return a bool.
   - `test.split('old')`: Return a list of separated strings.
 
-#### Variable
-##### Variable assignment
+##### Variable
+###### Variable assignment
 In python, a variable is a reference that point to an object in memory, it is not the
 objet itself.
 
@@ -376,8 +380,8 @@ Common traps:
   - Keywords cannot be used as variable names.
   - Augmented assignment on immutable tye still create a new object 
 
-##### Variable scope
-###### General case
+###### Variable scope
+**General case**
 The scope is where your variable is visible and accessible. If it is not well defined,
 it can cause bugs like `NameError` or overwrite another variable. 
 
@@ -390,7 +394,7 @@ Python resolve variables by searching though scope in this order known as the
 
 The search stop at the first match found
 
-###### global keyword
+**Global keyword**
 A variable outside a function is qualified as `global`.
 A variable inside the outer function of a nested functions is called `enclosing`.
 One inside a function called `local`.
@@ -413,7 +417,7 @@ def increment():
 
 The `global` keyword is only needed when assigning, not reading.
 
-###### nonlocal keyword
+**nonlocal keyword**
 You can use `nonlocal` keywords inside an inner nested function to use the variable from 
 the outer scope of the function.
 
@@ -434,3 +438,5 @@ def outer():
 
 print(outer())
 ```
+
+#### Operations
