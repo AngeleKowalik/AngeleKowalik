@@ -1,4 +1,4 @@
-# Présentation
+## Présentation
 Étudiant en L2 LEA (Anglais - Allemand) en cours de réorientation vers la Licence 
 Informatique à la FST Nancy.
 
