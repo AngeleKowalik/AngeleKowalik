@@ -35,7 +35,7 @@ their career path.
 
 ### Contact
 - E-Mail : angele.kowalik@gmail.com
-- CV : [Markdown version](./CV.md)
+- CV : [Markdown version](./CV_EN.md)
 
 <span id="fr"></span>
 
@@ -72,6 +72,6 @@ depuis l'API gouvernementale française `recherche-entreprise.gov`.
 
 ### Contact
 - Mail : angele.kowalik@gmail.com
-- CV : [Version Markdown](./CV.md)
+- CV : [Version Markdown](./CV_FR.md)
 
 
