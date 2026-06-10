@@ -143,7 +143,7 @@ When using Git, your file could be in either of this three zone:
 - Staging area (`git add`)
 - Repository (history (`git commit`))
 
-#### Git basis
+#### Git basis[]()
 Main commands:
   - `git init`: Create a new repo in the current folder
   - `git status`: See what is changed and what is staged
@@ -247,8 +247,8 @@ sequential.
 Variables and functions must be defined before calling them.
 
 
-#### Python: syntax and types
-##### Numbers: int, float
+### Python: syntax and types
+#### Numbers: int, float
 int: integer -> whole number (3, -2, etc)
 float: float -> decimals (2.63, -1.98, etc)
 
@@ -268,7 +268,7 @@ For exact decimal arithmetic (e.g., money), Python provides the decimal module.
 We can truncate a float into an integer with `int(3.9)` -> Return 3
 We can create a float from an integer with `float(3)` -> Returns 3.0
 
-##### Booleans
+#### Booleans
 Definition: 
   - Truthiness: A concept that evaluate if an object is `True` or `False`.
 
@@ -290,8 +290,8 @@ The only falsy values (when NOT in another class) are:
   - `None`
   - `False`
 
-##### String
-###### String basics
+#### String
+##### String basics
 Definition: 
   - A string: (str) An ordered immutable sequence of characters.
   - Immutable: Once created, can not be modified.
@@ -316,7 +316,7 @@ IndexError.
 To only change one character in a string: 
 `random_string = random_string[:3] + "N" + random_string[4:]`
 
-###### String method
+##### String method
 Definitions:
   - A method: A built-in function that is called using a dot notation.
 
@@ -338,8 +338,8 @@ Main commands (using variable named `test` containing a string):
   - `test.endswith('old')`: Return a bool.
   - `test.split('old')`: Return a list of separated strings.
 
-##### Variable
-###### Variable assignment
+#### Variable
+##### Variable assignment
 In python, a variable is a reference that point to an object in memory, it is not the
 objet itself.
 
@@ -380,7 +380,7 @@ Common traps:
   - Keywords cannot be used as variable names.
   - Augmented assignment on immutable tye still create a new object 
 
-###### Variable scope
+##### Variable scope
 **General case**
 The scope is where your variable is visible and accessible. If it is not well defined,
 it can cause bugs like `NameError` or overwrite another variable. 
@@ -439,13 +439,13 @@ def outer():
 print(outer())
 ```
 
-#### Operations
-##### Comparison
+### Operations
+#### Comparison
 Definition:
   - Comparison operator: In Python, a symbol used to test the relationship between two 
   entities, resulting in a strict Boolean evaluation (True or False).
 
-###### Equality and inequality
+##### Equality and inequality
 Main commands:
   - `==`: Evaluates if two values are exactly equal.
   - `!=`: Evaluates if two values are strictly not equal.
@@ -456,7 +456,7 @@ Common traps:
   - Comparing calculated decimals with == (e.g., `0.1 + 0.2 == 0.3` evaluates to `False` 
   due to machine-level memory architecture).
 
-###### Value Comparisons (Order Operators)
+##### Value Comparisons (Order Operators)
 Definition:
   - Order Operators: A subset of comparison operators that evaluate the mathematical or 
   lexicographical (alphabetical) ranking between two values.
@@ -471,7 +471,7 @@ Common traps:
   - Strings are evaluated by raw ASCII/Unicode values, meaning uppercase letters 
   evaluate as "less than" lowercase letters (e.g., `"Zebra" < "apple"` is `True`).
 
-###### Memory References (Identity Operators)
+##### Memory References (Identity Operators)
 Definition:
   - Identity Operators: Operators that evaluate whether two variables point to the exact 
   same physical object (memory address/reference), regardless of their content.
@@ -492,7 +492,7 @@ Common traps:
   object overrides. The formal PEP 8 standard dictates always using `is None` to check 
   for null values.
 
-###### Chained Comparisons
+##### Chained Comparisons
 Definition:
   - Chained Comparisons: A Python syntax feature allowing multiple comparison operators 
   to be linked continuously (e.g., `x < y <= z`) to evaluate ranges directly.
@@ -514,3 +514,118 @@ Common traps:
   - A function placed in the middle of a chain (e.g., `a < func() < b`) is strictly 
   evaluated only *once*, unlike using manual `and` operators where the function would 
   execute twice.
+
+#### Logical operators
+##### The `not` Operator (Logical Negation)
+**Definition:**
+- Logical Negation: A unary operator (requiring only one value) that performs an
+absolute inversion of a Boolean state. `True` becomes `False`, and `False` becomes 
+`True`.
+
+**Main mechanics/syntax:**
+`not [condition]`: Flips the evaluated Boolean result of the condition.
+`if not [variable]:`: The standard, Pythonic (PEP 8) way to check if a value is `False`, 
+empty, or null.
+
+**Common traps:**
+- The Redundancy Trap: Writing `if not is_admin == True:`. This wastes processing power 
+and violates academic formatting. The correct syntax is `if not is_admin:`.
+- The Bitwise Trap: Using the tilde `~` instead of `not`. `~` manipulates binary 1s and 
+0s at the hardware level, while `not` is strictly for Boolean logic.
+- The Precedence Trap: Misunderstanding that `not` is evaluated *after* comparison 
+operators but *before* `and`/`or`. For example, `not 5 > 10` is evaluated as 
+`not (5 > 10)` -> `not False` -> `True`.
+
+##### The `and` Operator (Logical Conjunction)
+**Definition:**
+- Logical Conjunction: A binary operator that evaluates to `True` strictly if both the 
+left operand AND the right operand are `True`. If either side is `False`, the entire 
+expression is `False`.
+- Binary Operator: An operator that requires exactly two complete, independent 
+expressions to evaluate (one on the left, one on the right).
+
+**Main mechanics/syntax:**
+`[condition_A] and [condition_B]`: Evaluates both conditions independently before 
+determining the final Boolean state.
+
+**Common traps:**
+- The Human Language Trap: Writing `if a == b and c:` instead of explicitly writing 
+`if a == b and a == c:`. 
+- The Binary Syntax Error: Writing `if score > 10 and < 50:`. The right side must be a 
+fully complete expression (e.g., `score < 50`).
+- The Bitwise Trap: Using `&` instead of `and`. `&` is for binary math (1s and 0s) and 
+will break logical evaluations.
+
+##### The `or` Operator (Logical Disjunction)
+**Definition:**
+- Logical Disjunction: A binary operator that evaluates to `True` if **at least one** of 
+its independent operands evaluates to `True`. It strictly returns `False` only if both 
+sides evaluate to `False`.
+- Inclusive OR: In computer science, `or` allows for both conditions to be true 
+simultaneously, unlike the spoken human language "exclusive or" (XOR).
+
+**Main mechanics/syntax:**
+`[condition_A] or [condition_B]`: Evaluates the left and right conditions independently. 
+If either is truthy, the statement passes.
+
+**Common traps:**
+- The Human Language Syntax Trap: Writing `if target == "A" or "B":`. The compiler 
+evaluates `"B"` independently. Since `"B"` is a non-empty string, it is inherently 
+`True`, causing the `if` statement to always trigger. Explicit variables are required: 
+`if target == "A" or target == "B":`.
+- The XOR Trap: Assuming `or` will fail if *both* conditions are met. If you need 
+strictly one or the other (but not both), you must use the exclusive-or operator 
+(`^`), not `or`.
+- The Bitwise Disjunction Trap: Using the pipe symbol `|` instead of `or`. `|` 
+manipulates binary numbers at the hardware level and will corrupt standard logical 
+evaluations.
+
+##### Truthy/Falsy values & Short-Circuiting
+**Definition:**
+- Truthy/Falsy: The inherent Boolean state of any Python object. Only `0`, `""` (empty 
+string), `[]` (empty list/data structures), and `None` evaluate to `False`. Absolutely 
+everything else evaluates to `True`.
+- Short-Circuit Evaluation: An optimization where logical operators (`and`, `or`) stop 
+evaluating left-to-right the exact millisecond the final logical outcome is 
+mathematically certain.
+- The Return Value Secret: `and`/`or` do not return the Boolean words `True` or `False`. 
+They return the literal value of the object that caused the evaluation to stop.
+
+**Main mechanics/syntax:**
+`x = a or b`: Returns the first Truthy value it finds. (Often used for setting default 
+fallbacks).
+`y = a and b`: Returns the first Falsy value it finds. (If all are Truthy, it returns 
+the very last value).
+
+**Common traps:**
+- The Boolean Assumption Trap: Assuming a logical operation will output `True`/`False`. 
+If you write `result = "Data" and "Admin"`, the variable `result` holds the string 
+`"Admin"`. 
+- The Falsy Zero Trap: Using implicit boolean checks (e.g., `if user_score:`) when `0` 
+is a valid, expected piece of data. Because `0` is Falsy, the `if` block will fail. 
+You must explicitly check `if user_score is not None:`.
+
+### Control structures
+#### Conditions : `if`, `elif`, `else`
+
+**Conditional control flow** : A decision-making structure that execute specific blocks of code based on truth value of Boolean expression. It flow sequentially until a `True` condition is met.
+
+**Complexity**:
+- Time: O(N) where N is the number of conditions evaluated
+- Space: O(1)
+
+**Main commands**:
+- `if` execute the indented code bloc below if `True`
+- Same for `elif` but can be chained after an `if` statement and will only be executed if `if` is not `True` 
+- `else` will execute its code bloc only if above `if` and `elif` are not executed
+- `elif` and `else` can be omitted.
+
+**Logic**:
+- You can enclose multiple `if` statements one inside the other
+- Most critical conditions must be evaluated first
+- `if` / `elif` are used only when only one action can be accomplished at a time (mutually exclusive)
+- Separate if blocs only if all actions can be accomplished at the same time (non-mutually exclusive)
+
+Common traps:
+- Using `elif` before an `if` statement = `SyntaxError`
+- Placing low-priority or broad condition before high priority and specifics ones.

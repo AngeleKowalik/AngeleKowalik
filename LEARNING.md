@@ -39,7 +39,48 @@
   - Selection sort
   - Merge sort
   - Quick sort
-  - 
+
+### Synchronous vs. Asynchronous
+**Definition:**
+- Asynchronous (Concurrent): A programming paradigm where a single-threaded program 
+yields control of the CPU during wait times, allowing other tasks to run instead of 
+freezing the system.
+- Synchronous: A programming paradigm where a single-threaded program run task 
+sequentially and wait for each task to be completed before moving on.
+- I/O-Bound: A program whose speed is limited by Input/Output operations (network requests, reading files, database queries) rather than CPU processing power.
+
+**Main mechanics/syntax:**
+- `Event Loop`: The central manager in Python's `asyncio` that tracks all running tasks 
+and rapidly switches between them whenever one is forced to wait for I/O.
+
+**Common traps:**
+- The CPU vs I/O Trap: Using `async` for heavy math. It only optimizes waiting, not processing.
+- The Parallel vs Concurrent Trap: Confusing True Parallelism (multiple CPU cores executing simultaneously) with Concurrency (one core switching between tasks incredibly fast during wait times).
+- The Blocking Code Trap: Executing a standard, synchronous wait function (like `time.sleep()`) inside an async program. It will block the single thread and freeze the entire Event Loop.
+
+### `coroutine` (The Pausable Task)
+**Definition:**
+Coroutine: A special subprogram that can suspend its execution to hand control back to the system during wait times, and later resume exactly where it left off.
+
+**Main mechanics/syntax:**
+`async def`: Flags a function as a coroutine, granting it the ability to pause.
+`await`: The yield point. Pauses the coroutine and hands CPU control back to the Event Loop until the specific I/O task is finished.
+
+**Common traps:**
+- The Unawaited Coroutine Trap: Calling an `async` function without `await` returns a coroutine object (a promise to run later), but does not actually execute the code.
+- The Syntax Error Trap: Attempting to use `await` inside a standard `def` function. It is strictly only allowed inside an `async def` block.
+- The Fake Awaitable Trap: Using `await` on a standard blocking function like `time.sleep()`. You can only await objects designed to yield (like `asyncio.sleep()`).
+
+### `asyncio` (The Event Loop / Manager)
+**Definition:**
+Event Loop: The core engine of asynchronous Python. It continuously cycles through all active tasks, pausing those waiting for I/O and resuming those whose data has arrived.
+
+**Main mechanics/syntax:**
+`asyncio.run(coroutine)`: The synchronous bridge. It initializes the Event Loop, executes the provided "main" coroutine until completion, and then gracefully closes the loop.
+
+**Common traps:**
+- The Multiple Loops Trap: Using `asyncio.run()` multiple times sequentially. It should generally only appear once at the very bottom of your script (often under `if __name__ == "__main__":`).
+- The Nested Run Trap: Calling `asyncio.run()` inside an existing `async def` function. You cannot embed a new Event Loop inside an active one.
 
 ## Coding good practices:
 ### General
