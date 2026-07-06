@@ -629,3 +629,112 @@ You must explicitly check `if user_score is not None:`.
 Common traps:
 - Using `elif` before an `if` statement = `SyntaxError`
 - Placing low-priority or broad condition before high priority and specifics ones.
+
+
+#### Loops: `for`, `while`
+##### Exercises : 
+Consider these two methods to make an agent move a set number of times:
+
+**Approach A:**
+
+Python
+
+```
+steps = 0
+while steps < 100:
+    move()
+    steps += 1
+```
+
+**Approach B:**
+
+Python
+
+```
+for i in range(100):
+    move()
+```
+
+**The Challenge:**
+
+1. **Big O Rigor:** Determine the Time Complexity of _both_ approaches in terms of $N$ (where $N$ is the target number of steps).
+    
+2. **Logic Puzzle:** Imagine a new scenario where your agent must keep moving forward _until it detects a wall_. You do not know how far away the wall is. Which loop structure (`while` or `for`) is logically and syntactically required for this behavior, and why?
+
+**Answer**
+1. 
+	A.  
+	- Time :  O(2<sup>N</sup>)
+	- Space : O(N)
+	B.
+	- Time : O(N)
+	- Space : O(1)
+2. `while` because the loop must continue until a condition is met but `for` loop are predefined in length
+
+**Correction**
+1. 
+	A.
+	- Time : O(N) because it grows linearly
+	- Space : O(1) 
+
+
+
+##### Lesson
+Loops allow you to execute a sequence of instructions multiple times in a row.
+
+**Complexity:** 
+	- Time : O(N)
+	- Space : O(1)
+
+Two types of loop:
+	- `for` : definite iteration = execute a defined number of time
+	- `while` : indefinite iteration = execute until a condition is met
+
+Common traps:
+	- Infinite iterations with the `while` if the condition is not updated
+	-  Missing by one in the `while` and `for` loops
+
+
+##### Exercise
+**Question**
+Imagine an agent inside a `while` loop that runs $N$ times. Inside that loop, the agent evaluates a hierarchical `if/elif/else` block consisting of $C$ different conditions to decide its next move.
+
+**Your Task:**
+
+1. What is the combined Time Complexity of this integrated system in terms of $N$ and $C$?
+    
+2. In the context of coding self-improving simulations, why is it mathematically critical to keep $C$ (the number of rules an agent checks per step) as small and prioritized as possible?
+
+**Answer**
+while:
+	- time : O(N)
+	- space : O(1)
+
+if:
+	- time: O(1)
+	- space: O(1)
+
+1. Time = O(N<sup>C</sup>)
+2. Because it will take exponentially more time to process the entire while loop
+
+**Correction**
+1. Time : O(N*C)
+2. Because as C grow it will linearly take more time for N to compute
+
+### Functions
+#### Functions parameters and `return`
+**definition: ** 
+- A function is a named reusable block of code that perform a specific task
+
+You define a function with the `def` keyword and the choosen name for the function, you can then call it as many time as you want with specifics parameters.
+
+You can use the `return` keyword at the end of your function to send it at the line where the function is called. If you don't capture the result, it is discarded.
+
+Exemple: 
+```python
+def multiplication_by_ten(number):
+  return number * 10
+
+print(multiplication_by_ten(20))
+# 200
+```
