@@ -7,36 +7,36 @@ Nancy, France | angele.kowalik@gmail.com | +33 7 72 27 82 86 |
 ---
 
 ## Profil
-Actuellement en deuxième année de Langues Étrangères Appliquées (Anglais/Allemand), j'ai développé un vif intérêt pour la systémique, la logique et la modélisation de systèmes informatiques complexes. Poussé par une forte curiosité intellectuelle et une démarche d'apprentissage autonome continue, j'apprends aujourd'hui le développement Python avec une approche rigoureuse (typage strict, code modulaire, gestion de versions). Mon objectif est d'intégrer la L2 Informatique à la FST pour acquérir les bases mathématiques et théoriques indispensables à la création d'algorithmes avancés et de simulations évolutives.
+Actuellement en deuxième année de Langues Étrangères Appliquées (Anglais/Allemand), je me réoriente vers l'informatique. J'apprends Python en autodidacte depuis plusieurs mois, avec une approche rigoureuse : typage strict, code modulaire, gestion de versions avec Git. Mon objectif est d'intégrer la Licence Informatique à la FST pour acquérir les bases mathématiques et théoriques nécessaires à la création d'algorithmes et de simulations évolutives, un domaine qui m'intéresse particulièrement.
 
 ## Projets Informatiques
 *Consultables sur mon profil GitHub.*
 
-- **[job-finder-CLI](https://github.com/AngeleKowalik/job-finder) :** Outil en ligne de commande développé en Python interagissant avec l'API `recherche-entreprise.gov`. Le programme permet de filtrer des entreprises, gère la pagination des résultats et intègre une gestion précise des erreurs réseau (Timeout, erreurs HTTP) pour éviter les crashs.
-- **[python-toolkit](https://github.com/AngeleKowalik/python-toolkit) :** Ensemble de modules et de fonctions utilitaires personnels. Création de ce package pour éviter la duplication de code et faciliter la maintenance entre mes différents projets d'apprentissage.
+- **[job-finder-CLI](https://github.com/AngeleKowalik/job-finder-CLI) :** Outil en ligne de commande en Python qui interagit avec l'API `recherche-entreprise.gov`. Filtre les entreprises, gère la pagination des résultats et prend en charge les erreurs réseau (timeout, erreurs HTTP) pour éviter les crashs.
+- **[python-toolkit](https://github.com/AngeleKowalik/python-toolkit) :** Modules et fonctions utilitaires que j'ai créés pour éviter de dupliquer du code entre mes différents projets d'apprentissage.
+- **[Notes de rattrapage L1](https://github.com/AngeleKowalik/ACADEMIC.md) :** Fichier tenu à jour sur GitHub où je consigne ce que j'apprends pour combler l'écart avec un cursus classique de L1 Informatique (structures de données, algorithmes, bases mathématiques).
 
 ## Compétences Techniques & Domaines d'Étude
-- **Langages :** Python (Programmation Orientée Objet, typage strict, logging, requêtes HTTP).
-- **Outils & Environnement :** Git, GitHub, Linux (navigation terminal, gestion des fichiers), création d'environnements virtuels (`venv`).
-- **Systèmes & Logique matérielle :** Compréhension de l'architecture des microprocesseurs et des portes logiques (simulateurs d'architecture). Initiation en cours et projets à venir en électronique et robotique.
+- **Langages :** Python (programmation orientée objet, typage strict, logging, requêtes HTTP).
+- **Outils & Environnement :** Git, GitHub, Linux (terminal, gestion des fichiers), environnements virtuels (`venv`).
+- **Logique & Systèmes :** Bases en logique booléenne, intérêt pour l'architecture des systèmes informatiques (approfondissement prévu dans mon cursus).
 
 ## Formation
 - **2024 – Présent | Université de Lorraine, Nancy**
   Licence Langues Étrangères Appliquées (Anglais / Allemand)
 - **2023 | Lycée Notre-Dame / St-Joseph**
-  Baccalauréat avec mention
+  Baccalauréat, mention Bien
 
 ## Expériences Professionnelles
-*Habitué au travail en autonomie et à la résolution de problèmes sur le terrain.*
 
-- **Août 2022 – Décembre 2023 | Jardinier & Concepteur — Le Jardin de Berchigranges**
-  Aménagement de terrains en autonomie, construction d'infrastructures en bois et pose de clôtures sur plusieurs centaines de mètres. Entretien des outils mécanisés.
-- **2019 – 2021 | Palefrenier — Les Écuries du Lac**
-  Entretien des machineries agricoles, logistique des installations et gestion des soins aux animaux.
+- **Août 2022 – Décembre 2023 | Le Jardin de Berchigranges**
+  Travail manuel en extérieur : aménagement de terrains, construction d'infrastructures en bois, pose de clôtures sur plusieurs centaines de mètres, entretien des outils mécanisés.
+- **2019 – 2021 | Écuries du Lac**
+  Aide régulière les week-ends : entretien des boxes, alimentation et soins de base aux chevaux.
 - **Janvier 2017 | Stagiaire — Axapa (Vincey)**
-  Découverte de l'environnement informatique d'entreprise et initiation au dessin vectoriel (Inkscape).
+  Découverte de l'environnement informatique d'entreprise, initiation au dessin vectoriel (Inkscape).
 
 ## Langues & Centres d'Intérêt
-- **Langues :** Anglais (Niveau C1 certifié - Cambridge B2 obtenu précédemment), Allemand (Niveau B1).
-- **Activités manuelles de précision :** Forge, coutellerie artisanale et travail du bois.
-- **Simulations & Systèmes complexes :** Passion pour les modélisations et les algorithmes évolutifs (projets types Primer, multi-agents). Pratique de jeux de logique, de gestion et d'optimisation industrielle (Turing Complete, Factorio, Opus Magnum).
+- **Langues :** Anglais (C1, Cambridge), Allemand (B1).
+- **Activités manuelles de précision :** Forge, coutellerie artisanale, travail du bois.
+- **Simulations & Systèmes complexes :** Algorithmes évolutifs et simulations multi-agents (dans l'esprit de Primer ou Sebastian Lague), j'ai d'ailleurs échangé avec des chercheurs des équipes de l'INRIA Nancy comme Georgios Kalakanos sur ces sujets. Jeux de logique et d'optimisation (Turing Complete, Factorio, Opus Magnum).

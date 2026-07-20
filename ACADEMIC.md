@@ -722,9 +722,16 @@ if:
 2. Because as C grow it will linearly take more time for N to compute
 
 ### Functions
-#### Functions parameters and `return`
+#### Functions parameters
 **definition: ** 
 - A function is a named reusable block of code that perform a specific task
+- A parameter is the name listed in the function definition that act as a placeholder
+- An argument is the actual value passed when calling a function
+
+There are three way to pass an argument to a function:
+- Positional (from left to right)
+- Keyword (by name `parameter=value` in the function call)
+- Default values if no argument is provided when calling the function (while defining the function `parameter=default_value`)
 
 You define a function with the `def` keyword and the choosen name for the function, you can then call it as many time as you want with specifics parameters.
 
@@ -738,3 +745,27 @@ def multiplication_by_ten(number):
 print(multiplication_by_ten(20))
 # 200
 ```
+
+**Traps :**
+- When writing a function named after the built-in functions, it overrides them
+- Putting positional arguments after a keyword argument will throw a SyntaxError
+- Default values are evaluated only once when defining the function
+- If a default values is mutable, the changes that happen to it are shared accross all calls (e.g `def test(items=[])`)
+
+#### Args and kwargs
+- *args collects any number of extra positional arguments into a tuple
+- **kwargs collects any number of extra keyword arguments into a dictionary
+
+Those names are just convention, they are defined via `*` and `**`
+
+So the order of a function defintion goes like this `def test(positional_argument, default_value, *args, **kwargs)`
+
+A call to a function is made like this `test(argument_1, default_value, arg1, arg2, etc, example_kwarg=1, example_kwarg_2=1)`
+
+#### Returns
+At the end of a function, if it has no return statement or a bare return, the function returns `None`
+
+The `return` statement immediately exit the function and send at the call line any arguments that are passed to the statement. 
+
+If you return mutliple values at once, they are packed into a tuple.
+
