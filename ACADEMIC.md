@@ -769,3 +769,74 @@ The `return` statement immediately exit the function and send at the call line a
 
 If you return mutliple values at once, they are packed into a tuple.
 
+### Collections
+#### Lists: creation, access, modification
+##### Lists creation
+A list is an ordered, mutable collection of items. It is written by using square brackets and comma separated values `list_test = [banana, apple, cucumber]`
+
+Mutable means you can change a list content after its creation.
+Ordered means you can call each element of a list by its index.
+
+A list can hold different items of different types eventhough it is often expected to keep them consistent.
+
+**traps:**
+- `list_test = [banana, apple, cucumber,]` is valid even with a trailing comma
+- `list_test = list()` give back an empty list (`[]`) and not `None`
+
+##### Accessing elements
+Each items in a list has a position called **index**. 
+You can access a specific item in a list by calling the list name and the index.
+List's indexes start at 0 for the first values and support **negative indexing** : -1 is the last value.
+
+```python
+list_test = [a, b, c]
+print(list_test[0])
+# a
+print(list_test[-1])
+# c
+```
+
+You can also **slice** a list meaning to extract multiples values of a list by using `list_name[start:stop] where start is included and stop is excluded
+
+**traps:**
+- Going out of range when accessing only one values give back an `IndexError` but going out of range with a slice fails silently and returns only the existing values
+- Doing `list_name_2 = list_name[:]` create a different object stored elsewhere in memory that you can modify without changing the first object. It has not the same identity.
+
+##### Modifying lists
+Because lists are mutables, you can change their content without creating a new object. For that, we use **methods**
+
+A **method** is a **function** that is attached to an **object** and accessed through the dot `.`.
+
+The dot is called **attribute access** or **dot notation**.
+
+- **Item assignment** replace a value at a known index : `list_test[0] = a`
+- **Slicing assignment** does the same for a slice : `list_test[0:4] = [a, b, c, d]`
+- `list_test.append("e")` add one item to the end
+- `list_test.insert(2, "i")` add one item at a specific index
+- `list_test.remove("c")` delete the first matching value
+- `popped = list_test.pop(4)` remove and return an item by index (if no index provided, the last item of the list is popped)
+- `list_test.expend(list_test_2)` adds all items fron another iterable onto the end of a list
+
+**traps:**
+- Calling `remove(<value>)` on a value that doesn't exist raise a `ValueError`
+- `.append` add only one item to the list even if a list is appened while `.extend` adds each individual items
+
+##### Mutability and identity
+A **variable** is **a name that points to an object in memory**. Lists being mutable, if you change one object, multiple variables can see the change. 
+
+To actually create an independent copy of a list, you can use :
+- `b = a[:]`
+- `b = a.copy()`
+- `b = list(a)`
+
+but those are all **shallow copies** so if you access a specific items inside a copied list and it happens to be a variable of a mutable type, it will still modifies it.
+
+```python
+a = [0]
+b = [a]
+c = b[:]
+c[0][0] = 1
+# a = [1]
+# b = [a]
+# c = [a]
+```
