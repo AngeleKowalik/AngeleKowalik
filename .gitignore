@@ -1,7 +1,6 @@
 *.ini
 *.vscode
 .venv
-ROADMAP.md
 *.py
 .pytest_cache
 personnal_roadmap.md

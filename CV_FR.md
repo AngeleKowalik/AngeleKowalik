@@ -14,7 +14,7 @@ Actuellement en deuxième année de Langues Étrangères Appliquées (Anglais/Al
 
 - **[job-finder-CLI](https://github.com/AngeleKowalik/job-finder-CLI) :** Outil en ligne de commande en Python qui interagit avec l'API `recherche-entreprise.gov`. Filtre les entreprises, gère la pagination des résultats et prend en charge les erreurs réseau (timeout, erreurs HTTP) pour éviter les crashs.
 - **[python-toolkit](https://github.com/AngeleKowalik/python-toolkit) :** Modules et fonctions utilitaires que j'ai créés pour éviter de dupliquer du code entre mes différents projets d'apprentissage.
-- **[Notes de rattrapage L1](https://github.com/AngeleKowalik/ACADEMIC.md) :** Fichier tenu à jour sur GitHub où je consigne ce que j'apprends pour combler l'écart avec un cursus classique de L1 Informatique (structures de données, algorithmes, bases mathématiques).
+- **[Notes de rattrapage L1](https://github.com/AngeleKowalik/AngeleKowalik/blob/master/ACADEMIC.md) :** Fichier tenu à jour sur GitHub où je consigne ce que j'apprends pour combler l'écart avec un cursus classique de L1 Informatique (structures de données, algorithmes, bases mathématiques).
 
 ## Compétences Techniques & Domaines d'Étude
 - **Langages :** Python (programmation orientée objet, typage strict, logging, requêtes HTTP).
@@ -39,4 +39,5 @@ Actuellement en deuxième année de Langues Étrangères Appliquées (Anglais/Al
 ## Langues & Centres d'Intérêt
 - **Langues :** Anglais (C1, Cambridge), Allemand (B1).
 - **Activités manuelles de précision :** Forge, coutellerie artisanale, travail du bois.
-- **Simulations & Systèmes complexes :** Algorithmes évolutifs et simulations multi-agents (dans l'esprit de Primer ou Sebastian Lague), j'ai d'ailleurs échangé avec des chercheurs des équipes de l'INRIA Nancy comme Georgios Kalakanos sur ces sujets. Jeux de logique et d'optimisation (Turing Complete, Factorio, Opus Magnum).
+- **Simulations & Systèmes complexes :** Algorithmes évolutifs et simulations multi-agents (dans l'esprit de Primer ou Sebastian Lague).
+- **Jeux de logique et d'optimisation** (Turing Complete, Factorio, Opus Magnum).
