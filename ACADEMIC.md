@@ -840,3 +840,49 @@ c[0][0] = 1
 # b = [a]
 # c = [a]
 ```
+
+#### Tuples
+##### Tuple definition
+A **tuple** is an **ordered, immutable collection of values written with at least one comma.**
+
+Once created, values inside a `tuple` can not be changed.
+
+**Tuples** can hold mixed types such as `str` or other **tuples**.
+
+**Tuples** are very useful when a value shouldn't be overwritten by accident during the execution of a program (e.g : a place's coordinates)
+
+**Traps :**
+- `(5)` is an `int` in **parentheses** but `(5,)` is a **tuple**
+- **Parenthesis** are not needed for a **tuple**, the tuple creation comes from the **comma** : `test = 1, 2, 3` is a **tuple**
+- An empty **tuple** is just `()` without any comma
+
+##### Tuple immutability
+**immutability** is enforced by the **interpreter** that raises a `TypeError` when trying to reassign a value to a **tuple**.
+
+However the **tuple immutability is shallow**, that means that if one of the **value** of a tuple is a **mutable object**, this object can be modified even inside a tuple. If one of of the **value** is **mutable**, the tuple is no longer **hashable**.
+
+**e.g :**
+```python
+t = (1, [2, 3])
+# Not hashable
+t[1].append(4)
+# t = (1, [2, 3, 4])
+```
+
+##### Tuple operations
+**Tuples support indexing and slicing** like **lists** and **strings**. 
+**Packing** is the act of bundling multiple **values** in a **tuple** while **unpacking** is the opposite.
+Because **tuples** are **immutable**, they only have two **methods** : `.count(variable)` and `.index(variable)`.
+
+You can swap variables quickly due to those properties `a, b = b, a`
+
+**traps:**
+- If you unpack too many values in too few variables it raises a `ValueError`.
+- If you don't know the precise number of values that a **tuple** will contain, you can bundle them with `*`. E.g. `a, *rest = (1, 2, 3, 4)` -> The variable with the `*` become a list.
+- **Slicing** a **tuple** returns a new **tuple**, not a **list**.
+
+##### Why use tuples
+They are the right choice when:
+- a fixed size / immutables data is needed
+- it need to be **hashable**
+- to return multiple **values** from a **function**
