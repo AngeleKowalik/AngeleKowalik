@@ -10,6 +10,9 @@ I am particularly interested in evolutionary algorithms and simulations.
 
 ## My projects
 **Work in progress section**
+### [Forest Fire Model](https://github.com/AngeleKowalik/forest_fire_model)
+Personal interpretation of the forest fire model after Drossel and Schwabl paper
+
 ### [Learning](./LEARNING.md)
 A simple file gathering all that I have learned since starting to code
 
