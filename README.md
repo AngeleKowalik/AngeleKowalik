@@ -2,8 +2,7 @@
 [Version française](./README_FR.md)
 
 ## Introduction
-Currently in my second year of Applied Foreign Languages studies (English and German) 
-and reorienting toward Computer Science at FST Nancy.
+Currently transitioning from a Bachelor's degree in Applied Foreign Languages to a Bachelor's degree in Computer Science (FST Nancy) with plans to follow with a Master's degree in Computer Science. My long-term goal is to become a public-sector Research Engineer (BAP E) as I have strong ethical preferences for open science and public research.
 
 Learning Python by myself, my GitHub holds a few tools that I created while learning.
 I am particularly interested in evolutionary algorithms and simulations.
