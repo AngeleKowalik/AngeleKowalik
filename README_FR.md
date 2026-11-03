@@ -11,13 +11,6 @@ simulations.
 ### [Modèle de feux de forêts](https://github.com/AngeleKowalik/forest_fire_model)
 Interprétation personnelle d'une simulation de feux de forêts d'après la publication de Dossel et Schwabl
 
-### [Apprentissage](./LEARNING.md)
-Un fichier simple contenant l'ensemble des connaissances pratiques que j'ai accumulées
-depuis que j'ai commencé à coder
-
-### [Académique](./ACADEMIC.md)
-Un fichier servant à combler mes lacunes avant de rejoindre une licence d'informatique.
-
 ### [python-toolkit](https://github.com/AngeleKowalik/python-toolkit)
 Package de modules utilitaires créé à des fins de plus grande modularité et de 
 maintenance facilitée entre mes différents projets
