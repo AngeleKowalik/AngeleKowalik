@@ -1,42 +1,36 @@
 # Angèle Kowalik
-**Student transitioning to a Bachelor's Degree in Computer Science (FST)**
+**Research Engineer Internship  | Bilingual Documentation and CS Codebase Immersion**
 
-Nancy, France | angele.kowalik@gmail.com | +33 7 72 27 82 86 |
-**GitHub:** [github.com/AngeleKowalik](https://github.com/AngeleKowalik)
-
----
-
+Nancy, France | angele.kowalik@gmail.com |+33 7 72 27 82 86 | **[GitHub](https://github.com/AngeleKowalik)** | **[LinkedIn](https://www.linkedin.com/in/angele-kowalik)**
 ## Profile
-For several months I've been learning Python on my own, with a rigorous approach: strict typing, modular code, version control with Git. Currently in my second year of Applied Foreign Languages (English/German), I am transitioning toward computer science, aiming for a Bachelor's in Computer Science at FST followed by the Master CPS2 at Mines Saint-Étienne. I'm particularly interested in multi-agent systems and evolutionary algorithms.
+Third-year Applied Foreign Languages student (English / German) switching to a CS Bachelor's Degree at FST Nancy. Targeting a Research Engineer job specialized in scientific computation in the long term.
+Currently seeking an internship in a CS research team to facilitate this transition. Providing clear bilingual documentation and writing docstrings. Capable of working autonomously from a codebase clone. Self-taught on Pytest, ensuring strict type hinting, modular code and version control with Git.
+## CS Projects
+*Available on GitHub*
+- **[Forest fire model](https://github.com/AngeleKowalik/forest_fire_model):** Created a cellular automaton following the work of Drossel and Schwabl. Built using a 2D NumPy array. Computed using boolean masks and NumPy vectorized methods in order to take advantage of C's optimisation.
+- **[job-finder-CLI](https://github.com/AngeleKowalik/job-finder-CLI):** Developed a command-line interface sending requests to `recherche-entreprise.gov` API using a Python script. Filtered out irrelevant companies for internship or job search, handled pagination of results and network errors such as timeouts to prevent crashes.
+- **[python-toolkit](https://github.com/AngeleKowalik/python-toolkit):** Packaged various functions into utility modules to enforce DRY across projects. Enabled selective imports through `pyproject.toml`. Wrote each function with a relevant docstring, type hinting and unit test with Pytest (currently implementing). 
 
-## Computer Science Projects
-*Available on my GitHub profile.*
-
-- **[job-finder-CLI](https://github.com/AngeleKowalik/job-finder-CLI):** Command-line tool in Python that interacts with the `recherche-entreprise.gov` API. Filters companies, handles result pagination, and manages network errors to prevent crashes.
-- **[python-toolkit](https://github.com/AngeleKowalik/python-toolkit):** Utility modules and functions I built to avoid duplicating code across my learning projects.
-- **[L1 catch-up notes](https://github.com/AngeleKowalik/AngeleKowalik/blob/master/ACADEMIC.md):** A file I keep updated on GitHub where I track what I'm learning to close the gap with a standard L1 Computer Science curriculum (data structures, algorithms, math foundations).
-
-## Technical Skills
-- **Languages:** Python (object-oriented programming, strict typing, logging, HTTP requests).
-- **Tools** Git, GitHub, Linux (terminal, file management), virtual environments (`venv`).
-
+## Technical Skills and Fields of Study
+- **Python:** NumPy (matrix computation, vectorized operations), Pytest, OOP, type hinting, logging, HTTP requests.
+- **Tools and Environment:** Git, GitHub, Linux (WSL, Bash), virtual environments (`venv`).
+- **Logic and Systems:** Boolean logic fundamentals, deep interest in computer systems architecture (upcoming coursework at FST).
 ## Education
-- **2024 – Present | University of Lorraine, Nancy**
-  Bachelor's Degree in Applied Foreign Languages (English / German)
-- **2023 | Lycée Notre-Dame / St-Joseph**
-  Baccalauréat, with distinction (mention Bien)
-
-## Professional Experience
-
-- **August 2022 – December 2023 | Le Jardin de Berchigranges**
-  Manual outdoor work: landscaping, construction of wooden infrastructure, installation of fencing across several hundred meters, maintenance of power tools.
-- **2019 – 2021 | Écuries du Lac**
-  Regular weekend help: stall upkeep, feeding, and basic care for horses.
-- **January 2017 | Intern — Axapa (Vincey)**
-  Introduction to a corporate IT environment, initiation into vector graphics (Inkscape).
-
-## Languages & Interests
-- **Languages:** English (C1, Cambridge), German (B1).
-- **Precision manual activities:** Forging, artisanal knifemaking, woodworking.
-- **Simulations & complex systems:** Evolutionary algorithms and multi-agent simulations (in the style of Primer or Sebastian Lague).
-- **Logic and optimization games** (Turing Complete, Factorio, Opus Magnum).
+- **2025 - Present | Université de Lorraine, Nancy**
+  BA in Applied Foreign Languages (English / German) | Years 2 & 3
+- **2024 - 2025 | Université Bretagne Sud, Lorient**
+  BA in Applied Foreign Languages (English / German) | Year 1
+- **2022 | Notre-Dame - Saint-Joseph, Épinal**
+  Baccalauréat (High Honors)
+## Work Experience
+- **August 2022 - December 2022 | Landscaper and Groundskeeper | Le Jardin de Berchigranges, Granges-Aumontzey** 
+   Landscaped the garden, constructed wooden infrastructures, installed fences over hundreds of meters, maintained power tools.
+- **2019 – 2021 | Volunteer Stable Hand | Écuries du Lac, Chaumousey**
+  Provided weekly assistance: cleaned stalls, fed horses, and administered basic care.
+- **January 2017 | IT Discovery Intern | Axapa, Vincey**
+  Observed a corporate IT environment and gained basic knowledge of vector graphic design using Inkscape.
+## Languages and Interests
+- **Languages:** French (Native), English (C1, Cambridge), German (B1).
+- **Precision Crafts:** Bladesmithing and knifemaking, wood turning.
+- **Simulations and Complex Systems:** Evolutionary algorithms and multi-agent simulations ([Sebastian Lague](https://www.youtube.com/watch?v=rSKMYc1CQHE), [Primer](https://www.youtube.com/watch?v=7OLpKqTriio)).
+- **Logic and Optimisation Games:** Turing Complete, Factorio, Opus Magnum.
